@@ -2,13 +2,13 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
 
 <head>
-    <title>Bootstrap Portfolio/Resume Theme for Developers</title>
+    <title>{{ site.title }}</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Boootstrap Portfolio/Resume Theme for Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="{{ site.author }}">    
     <link rel="shortcut icon" href="favicon.ico">  
     
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -40,14 +40,40 @@
 			    <div class="col">         
 		            <img class="profile-image img-fluid float-start rounded-circle" src="assets/images/profile.png" alt="profile image" />
 		            <div class="profile-content">
-		                <h1 class="name">James Lee</h1>
-		                <h2 class="desc">Web App Developer</h2>   
+		                <h1 class="name">{{ site.header.title }}</h1>
+		                <h2 class="desc">{{ site.header.description }}</h2>   
 		                <ul class="social list-inline">
-		                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-		                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-		                    <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt"></i></a></li>    
-		                    <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow"></i></a></li>   
-		                    <li class="list-inline-item last-item"><a href="#"><i class="fab fa-codepen"></i></a></li>                
+                            {% if site.social.github %}
+                            <li class="list-inline-item">
+                                <a title="{{ site.social.github }} on Github"
+                                    href="https://github.com/{{ site.social.github }}"
+                                    target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                            </li>
+                            {% endif %}
+                        
+                            {% if site.social.linkedin %}
+                            <li class="list-inline-item">
+                                <a title="{{ site.social.linkedin }} on LinkedIn"
+                                    href="https://www.linkedin.com/in/{{ site.social.linkedin }}/"
+                                    target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                            </li>
+                            {% endif %}
+                        
+                            {% if site.social.stackoverflow %}
+                            <li class="list-inline-item">
+                                <a title="{{ site.social.stackoverflow }} on StackOverflow"
+                                    href="http://stackoverflow.com/users/2695723/{{ site.social.stackoverflow }}"
+                                    target="_blank"><i class="fab fa-stack-overflow fa-2x"></i></a>
+                            </li>
+                            {% endif %}
+                        
+                            {% if site.social.credly %}
+                            <li class="list-inline-item">
+                                <a title="{{ site.social.credly }} on Credly"
+                                    href="https://credly.com/users/{{ site.social.credly }}"
+                                    target="_blank"><i class="fa fa-id-badge fa-2x"></i></a>
+                            </li>
+                            {% endif %}                                        
 		                </ul> 
 		            </div><!--//profile-->
 			    </div><!--//col-->
@@ -58,7 +84,9 @@
 							<label class="custom-control-label" for="darkSwitch">Dark Mode</label>
 						</div>
 			        </div><!--//dark-mode-switch-->
-	                <a class="btn btn-cta-primary" href="https://themes.3rdwavemedia.com/" target="_blank"><i class="fas fa-paper-plane"></i> Contact Me</a>        
+                    <!--
+	                <a class="btn btn-cta-primary" href="https://themes.3rdwavemedia.com/" target="_blank"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    -->        
 	            </div><!--//col-->
 	        </div><!--//row-->         
         </div><!--//container-->

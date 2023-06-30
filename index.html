@@ -9,10 +9,12 @@ shortName: Icreated Developer
             <div class="primary col-lg-8 col-12">
                 <section class="about section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">About Me</h2>
+                        <h2 class="heading">A propos de moi</h2>
                         <div class="content">
-                            <p>Write a brief intro about yourself. It's a good idea to include your personal interests and hobbies as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec. Commodo ligula eget dolor. Aenean massa.</p>
-                         
+                            <p>
+                                {% capture about_me %} {% include about-me.md %} {% endcapture %}
+                                {{ about_me | markdownify }}
+                            </p>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -41,14 +43,24 @@ shortName: Icreated Developer
                                 <a class="btn btn-cta-secondary" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank"><i class="fas fa-thumbs-up"></i> Back my project</a>                 
                             </div><!--//item-->
                             <hr class="divider" />
+
+
                             <div class="item row">
                                 <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
                                 <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-1.png" alt="project name" />
                                 </a>
                                 <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">CoderPro - Boootstrap Startup Template For Software Projects</a></h3>
-                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
+                                        CoderPro - Boootstrap Startup Template For Software Projects
+                                    </a></h3>
+                                    <p class="mb-2">
+                                        You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.
+                                    </p>
+                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Find out more
+                                        </a>
+                                    </p>
                                 </div><!--//desc-->                          
                             </div><!--//item-->
                             
@@ -101,25 +113,31 @@ shortName: Icreated Developer
                 
                 <section class="projects section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Other Projects</h2>
+                        <h2 class="heading">Certifications</h2>
                         <div class="content">
-                            <div class="item">
-                                <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/" target="_blank">Pillar - Free Boootstrap Resume/CV Template for Developers</a> <span class="badge badge-theme">Free</span></h3>
-                                <p class="summary">Provide a brief description of your project. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatu.</p>
-                                <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/" target="_blank"><i class="fas fa-external-link-alt"></i>Download Now</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/speciality/devblog-free-bootstrap-4-blog-template-for-developers/" target="_blank">DevBlog - Free Boootstrap Blog Template for Developers</a> <span class="badge badge-theme">Free</span></h3>
-                                <p class="summary">Provide a brief description of your project. Maecenas ornare ultricies risus, in fermentum augue consectetur in. Vestibulum vitae mauris iaculis, sollicitudin velit in, molestie nulla. </p>
-                                <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/speciality/devblog-free-bootstrap-4-blog-template-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Download Now</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/nova-bootstrap-landing-page-template-for-mobile-apps/" target="_blank">Nova - Free App Landing Page Template for App Developers</a> <span class="badge badge-theme">Free</span></h3>
-                                <p class="summary">Provide a brief description of your project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel purus enim. Etiam tortor felis, fermentum ac ultrices sed.</p>
-                                <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/nova-bootstrap-landing-page-template-for-mobile-apps/" target="_blank"><i class="fas fa-external-link-alt"></i>Download Now</a></p>
-                            </div><!--//item-->
+                            {% assign certifications = site.certifications | where: 'status', 'published' %}
+                            {% for certification in certifications %}  
+                                <div class="item row">
+                                    <a class="col-md-4 col-12" href="{{ certification.certificationUrl}}" target="_blank">
+                                        <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl}}" alt="Badge {{ certification.title }}" height="156px"/>
+                                    </a>
+                                    <div class="desc col-md-8 col-12">
+                                        <h3 class="title"><a href="{{ certification.certificationUrl}}" target="_blank">
+                                            {{ certification.title }}
+                                        </a></h3>
+                                        <p class="mb-2">
+                                            {{ certification.description }}
+                                        </p>
+                                        <p><a class="more-link" href="{{ certification.certificationUrl}}" target="_blank">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            En savoir plus
+                                            </a>
+                                        </p> 
+                                    </div><!--//desc-->                          
+                                </div><!--//item-->
+                            {% endfor %}
                             
-                            <a class="btn btn-cta-secondary" href="#">More on GitHub <i class="fas fa-chevron-right pt-1"></i></a>
+                            <a class="btn btn-cta-secondary" href="{{ site.icreated.links.credly.url }}">En savoir plus sur {{ site.icreated.links.credly.title }} <i class="fas fa-chevron-right pt-1"></i></a>
                             
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
@@ -169,9 +187,8 @@ shortName: Icreated Developer
                         <h2 class="heading sr-only">Basic Information</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>San Francisco, US</li>
-                                <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="#">jameslee@website.com</a></li>
-                                <li><i class="fas fa-link"></i><span class="sr-only">Website:</span><a href="#">https://www.website.com</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>{{ site.icreated.location }}</li>
+                                <li><i class="fas fa-link"></i><span class="sr-only">{{ site.icreated.links.blog.title }}:</span><a href="{{ site.icreated.links.blog.url }}">{{ site.icreated.links.blog.url }}</a></li>
                             </ul>
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
@@ -179,13 +196,15 @@ shortName: Icreated Developer
                 
                 <aside class="skills aside section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Skills</h2>
+                        <h2 class="heading">Compétences</h2>
                         <div class="content">
                             <p class="intro">
-                                Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Github profile so people can get more info there.</p>
-                            
+                                {% capture skills %} {% include skills.md %} {% endcapture %}
+                                {{ skills | markdownify }}
+                            </p>
                             <div class="skillset">
-                                {% for skill in site.skills%}
+                                {% assign skills = site.skills | where: 'status', 'published' %}
+                                {% for skill in skills %}
                                 <div class="item">
                                     <h3 class="level-title">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
                                     <div class="level-bar progress">
@@ -194,12 +213,12 @@ shortName: Icreated Developer
                                 </div><!--//item-->                                
                                 {% endfor %}                     
                                 
-                                <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on GitHub</a></p> 
+                                <p><a class="more-link" href="{{ site.icreated.links.github.url }}"><i class="fas fa-external-link-alt"></i>Voir sur GitHub</a></p> 
                             </div>              
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
                 </aside><!--//section-->
-                
+                <!--
                 <aside class="testimonials aside section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Testimonials</h2>
@@ -209,26 +228,25 @@ shortName: Icreated Developer
                                     <p><i class="fas fa-quote-left"></i>James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!</p>
                                 </blockquote>                
                                 <p class="source"><span class="name">Tim Adams</span><br /><span class="title">Curabitur commodo</span></p>                                                             
-                            </div><!--//item-->
+                            </div>
                             
                             <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p> 
                             
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                
+                        </div>
+                    </div>
+                </aside>
+                -->
                 <aside class="education aside section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Education</h2>
                         <div class="content">
+                            {% assign schools = site.schools | where: 'status', 'published' %}
+                            {% for school in schools %}                              
                             <div class="item">                      
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> MSc Computer Science</h3>
-                                <h4 class="university">University College London <span class="year">(2018-2019)</span></h4>
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i>{{ school.graduation }}</h3>
+                                <h4 class="university">{{ school.title }} <span class="year">({{ school.years }})</span></h4>
                             </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> BSc Computer Science</h3>
-                                <h4 class="university">University of Bristol <span class="year">(2014-2018)</span></h4>
-                            </div><!--//item-->
+                            {% endfor %}
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
@@ -238,14 +256,17 @@ shortName: Icreated Developer
                         <h2 class="heading">Languages</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li class="item">
-                                    <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> </span>
-                                </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>Spanish:</strong></span>
-                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i></span>
-                                </li><!--//item-->
+                                {% assign languages = site.languages | where: 'status', 'published' %}
+                                {% for language in languages %}       
+                                    <li class="item">
+                                        <span class="title"><strong>{{ language.title }}:</strong></span>
+                                        <span class="level">{{ language.level }}<br class="visible-xs"/> 
+                                            {% for rate in (1..language.rate) %} 
+                                                <i class="fas fa-star"></i>
+                                            {% endfor %}
+                                        </span>
+                                    </li><!--//item-->
+                                {% endfor %}
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->
@@ -263,59 +284,43 @@ shortName: Icreated Developer
                 
                 <aside class="list music aside section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Favourite coding music</h2>
+                        <h2 class="heading">Musique de concentration</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="#">Ut sollicitudin in mauris non auctor</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>
-                                <li><i class="fas fa-headphones"></i> <a href="#">Duis et felis bibendum</a></li>
+                                {% assign musics = site.favorite_music | where: 'status', 'published' %}
+                                {% for music in musics %}     
+                                    <li class="item"><i class="fas fa-headphones"></i> <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - {{ music.album }}</li>
+                                {% endfor %}
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
                 
+                {% assign conferences = site.conferences | where: 'status', 'published' %}
+                {% if conferences.size > 0 %}
                 <aside class="list conferences aside section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Conferences</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="far fa-calendar-alt"></i> <a href="#" target="_blank">WWDC 2030</a> (San Francisco)</li>
-                                <li><i class="far fa-calendar-alt"></i> <a href="#">Hive</a> (Seattle)</li>
+                                {% for conference in conferences %}  
+                                    <li><i class="far fa-calendar-alt"></i> <a href="{{ conference.link }}" target="_blank">{{ conference.title }}</a> ({{ conference.location }})</li>
+                                {% endfor %}
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
-                
+                {% endif %}
+
                 <aside class="credits aside section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Credits</h2>
                         <div class="content">
-                            <ul class="list-unstyled pb-2">
-                                <li><a href="https://getbootstrap.com/" target="_blank"><i class="fas fa-external-link-alt"></i>Bootstrap</a></li>
-                                <li><a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><i class="fas fa-external-link-alt"></i>FontAwesome</a></li>
-                                <li><a href="https://github.com/IonicaBizau/github-calendar" target="_blank"><i class="fas fa-external-link-alt"></i>GitHub Calendar Plugin</a></li>
-                                
-                                <li><a href="https://caseyscarborough.com/projects/github-activity/" target="_blank"><i class="fas fa-external-link-alt"></i>GitHub Activity Stream</a></li>
-                                
-                                <li><a href="https://github.com/sdepold/vanilla-rss" target="_blank"><i class="fas fa-external-link-alt"></i>Vanilla RSS</a></li>
-                                <li><a href="https://github.com/coliff/dark-mode-switch"><i class="fas fa-external-link-alt"></i>Dark Mode Switch</a></li>
-                                
-                            </ul>
-                            
-                            <hr/>
-                            
-                             <p class="pt-2">This Boootstrap portfolio template is handcrafted by UX designer <a href="https://twitter.com/3rdwave_themes" target="_blank">Xiaoying Riley</a> at <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a> for developers and is <strong>FREE</strong> as long as you keep the footer attribution link.</p>
-                             <p>If you’d like to <strong>use this template without the attribution link</strong>, you can <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-portfolio-theme-for-web-developers/" target="_blank">buy the commercial license</a>.</p>
-                             
-                             <a class="btn btn-cta-primary btn-download" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/" target="_blank"><i class="fas fa-download"></i> I want to download</a>
-                            <hr/>
-                            <h5 class="subheading pt-3">Want more free Bootstrap themes and templates?</h5>
-                            <p>Check out our <a href="https://themes.3rdwavemedia.com/bootstrap-templates/free/">collection of free themes and templates.</a></p>
-                            <p>Follow <a href="https://twitter.com/3rdwave_themes" target="_blank">Xiaoying</a> on twitter so you don't miss any future freebies!</p> 
-                            
-                            <a class="btn btn-cta-secondary btn-follow" href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fab fa-twitter"></i> Follow on twitter</a>
-                            
+                             <p class="pt-2">Pour faire ce site, j'ai pris un template gratuit chez <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-portfolio-theme-for-web-developers/" target="_blank">3rd Wave Media</a> créé par <a href="https://twitter.com/3rdwave_themes" target="_blank">Xiaoying Riley</a></p>
+                             <p>J'ai integré <a href="https://jekyllrb.com/">Jekyll</a> dans le template et je jère le deployment avec Github Action ici</p>
+                             <p>Vous pouvez forker ma branche, supprimer mes données perso et utiliser mon integration Jekyll gratuitement sans aucune contrainte.</p>
+                             <hr/>
+                             <p>Si vous voulez enlever le footer du designer du template, regardez bien les conditions de la licence commerciale</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
