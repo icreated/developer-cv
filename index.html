@@ -21,100 +21,94 @@ shortName: Icreated Developer
     
                <section class="latest section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Latest Projects</h2>
-                        <div class="content">    
-                                               
-                            <div class="item featured text-center">
-                                
-                                <div class="featured-image has-ribbon">
-                                    <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank">
-                                    <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-featured.jpg" alt="project name" />
-                                    </a>
-                                    <div class="ribbon">
-                                        <div class="text">New</div>
-                                    </div>
-                                </div>
-                                
-                                <h3 class="title mb-3"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank">Launch - The perfect Bootstrap template for SaaS products</a></h3>
-                                    
-                                <div class="desc text-start">                                    
-                                    <p>You can promote your main project here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
-                                </div><!--//desc-->         
-                                <a class="btn btn-cta-secondary" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank"><i class="fas fa-thumbs-up"></i> Back my project</a>                 
-                            </div><!--//item-->
-                            <hr class="divider" />
+                        <h2 class="heading">Mes Projects</h2>
+                        <div class="content">
+                            {% assign featured_projects = site.projects | where: 'status', 'featured' %}
+                            {% if featured_projects.size > 0 %}
+                                {% for project in featured_projects %}                                            
+                                    <div class="item featured text-center">
+                                        <div class="featured-image has-ribbon">
+                                            {% if project.link %}
+                                            <a href="{{ project.link }}" target="_blank">
+                                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                                            </a>
+                                            {% else %}
+                                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                                            {% endif %}                                            
+                                            <div class="ribbon">
+                                                <div class="text">Nouveau</div>
+                                            </div>
+                                        </div>
+                                        <h3 class="title mb-3">
+                                            {% if project.link %}
+                                                <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                                            {% else %}
+                                                {{ project.title }}
+                                            {% endif %}
+                                        </h3>
+                                        <div class="desc text-start">                                    
+                                            {{ project.description }}
+                                        </div><!--//desc-->         
+                                        <a class="btn btn-cta-secondary" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank"><i class="fas fa-thumbs-up"></i>En savoir plus</a>                 
+                                    </div><!--//item-->
+                                    <hr class="divider" />   
+                                {% endfor %}                         
+                            {% endif %}                            
+ 
 
-
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-1.png" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
-                                        CoderPro - Boootstrap Startup Template For Software Projects
-                                    </a></h3>
-                                    <p class="mb-2">
-                                        You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.
-                                    </p>
-                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Find out more
-                                        </a>
-                                    </p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
-                            
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-2.png" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank">DevCard - Boootstrap Portfolio Template for Software Developers</a></h3>
-                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
-                            
-                             <div class="item row">
-                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-3.png" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Instance - Boootstrap Portfolio Template for Aspiring Full Stack Developers</a></h3>
-                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
-                            
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/bootstrap-template-for-mobile-apps-nova-pro/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-4.png" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/bootstrap-template-for-mobile-apps-nova-pro/" target="_blank">Nova Pro - Boootstrap Template for Mobile Startups</a></h3>
-                                    <p class="mb-2">You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus.</p>
-                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/bootstrap-template-for-mobile-apps-nova-pro/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->                            
-                            <div class="item row">
-                                <a class="col-md-4 col-12" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank">
-                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/projects/project-5.png" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-12">
-                                    <h3 class="title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank">DevStudio - Boootstrap Template for WebDev Agencies and Freelance Developers</a></h3>
-                                    <p class="mb-2"> You can put one of your secondary projects here. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
-                                    <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/devstudio-bootstrap-theme-for-web-development-agencies-and-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-                                </div><!--//desc-->                          
-                            </div><!--//item-->
+                            {% assign projects = site.projects | where: 'status', 'published' %}
+                            {% if projects.size > 0 %}
+                                {% for project in projects %}                            
+                                    <div class="item row">
+                                        {% if project.link %}
+                                            <a class="col-md-4 col-12" href="{{ project.link }}" target="_blank">
+                                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                                            </a>
+                                        {% else %}
+                                            <div class="col-md-4 col-12">
+                                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                                            </div>
+                                        {% endif %}
+                                        <div class="desc col-md-8 col-12">
+                                            <h3 class="title">
+                                                {% if project.link %}
+                                                    <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                                                {% else %}
+                                                    {{ project.title }}
+                                                {% endif %}
+                                            </h3>
+                                            <p class="mb-2">{{ project.description }}</p>
+                                            <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
+                                        </div><!--//desc-->                          
+                                    </div><!--//item-->
+                                {% endfor %}
+                            {% endif %}
                             
                         </div><!--//content-->  
                     </div><!--//section-inner-->                
                 </section><!--//section-->
+
+                <section class="experience section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Experience Freelance</h2>
+                        <div class="content">
+                            {% assign experiences = site.experiences | where: 'status', 'published' %}
+                            {% for experience in experiences %}  
+                                <div class="item">
+                                    <h3 class="title">{{ experience.title }} - <span class="place"><a href="{{ experience.link }}">{{ experience.company }}</a></span> <span class="year">({{ experience.dates }})</span></h3>
+                                    {{ experience.content }}
+                                </div><!--//item-->
+                            {% endfor %}
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->                
                 
                 <section class="projects section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Certifications</h2>
                         <div class="content">
+                            {% capture certif %} {% include certifications.md %} {% endcapture %}
+                            {{ certif | markdownify }}                            
                             {% assign certifications = site.certifications | where: 'status', 'published' %}
                             {% for certification in certifications %}  
                                 <div class="item row">
@@ -143,41 +137,13 @@ shortName: Icreated Developer
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
                 
-                <section class="experience section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Work Experience</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title">Co-Founder & Lead Developer - <span class="place"><a href="#">Startup Hub</a></span> <span class="year">(2023 - Present)</span></h3>
-                                <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="#">Google</a></span> <span class="year">(2020 - 2023)</span></h3>
-                                <p>Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="#">eBay</a></span> <span class="year">(2019 - 2020)</span></h3>
-                                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                            </div><!--//item-->
-                            
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
                 <section class="github section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">My GitHub</h2>
-                        <p>You can embed your GitHub contribution graph calendar using IonicaBizau's <a href="https://github.com/IonicaBizau/github-calendar" target="_blank">GitHub Calendar</a> widget. 
-                        
-                        <div id="github-graph" class="github-graph">
-
-                        </div><!--//github-graph-->
-
-                        <p>You can also embed your GitHub activities using Casey Scarborough's <a href="https://github.com/caseyscarborough/github-activity" target="_blank">GitHub Activity Stream</a> widget.        
-                        <!--//Usage: https://caseyscarborough.com/projects/github-activity/ -->                       
-                        <div id="ghfeed" class="ghfeed">
-                        </div><!--//ghfeed-->
-                        
+                        <h2 class="heading">Mon activité sur GitHub</h2>
+                        <div class="github-graph"></div><!--//github-graph-->
+                        <script>
+                            GitHubCalendar(".github-graph", "icreated", { responsive: true });
+                        </script>
                     </div><!--//secton-inner-->
                 </section><!--//section-->
             </div><!--//primary-->
@@ -218,28 +184,34 @@ shortName: Icreated Developer
                         </div><!--//content-->  
                     </div><!--//section-inner-->                 
                 </aside><!--//section-->
-                <!--
+
+                {% assign testimonials = site.testimonials | where: 'status', 'published' %}
+                {% if testimonials.size > 0 %}                
                 <aside class="testimonials aside section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Testimonials</h2>
                         <div class="content">
+                            {% for testimonial in testimonials %}                 
                             <div class="item">
                                 <blockquote class="quote">                                  
-                                    <p><i class="fas fa-quote-left"></i>James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!</p>
+                                    <p><i class="fas fa-quote-left"></i>{{ testimonial.content }}</p>
                                 </blockquote>                
-                                <p class="source"><span class="name">Tim Adams</span><br /><span class="title">Curabitur commodo</span></p>                                                             
+                                <p class="source"><span class="name">{{ testimonial.name }}</span><br /><span class="title">{{ testimonial.company }}</span></p>                                                             
                             </div>
-                            
+                            {% endfor %}
                             <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p> 
-                            
                         </div>
                     </div>
                 </aside>
-                -->
+                {% endif %}
+
                 <aside class="education aside section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Education</h2>
                         <div class="content">
+                            {% capture education %} {% include education.md %} {% endcapture %}
+                            {{ education | markdownify }}
+
                             {% assign schools = site.schools | where: 'status', 'published' %}
                             {% for school in schools %}                              
                             <div class="item">                      
@@ -253,8 +225,10 @@ shortName: Icreated Developer
                             
                 <aside class="languages aside section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Languages</h2>
+                        <h2 class="heading">Languages</h2>                     
                         <div class="content">
+                            {% capture languages %} {% include languages.md %} {% endcapture %}
+                            {{ languages | markdownify }}   
                             <ul class="list-unstyled">
                                 {% assign languages = site.languages | where: 'status', 'published' %}
                                 {% for language in languages %}       
@@ -284,12 +258,14 @@ shortName: Icreated Developer
                 
                 <aside class="list music aside section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Musique de concentration</h2>
+                        <h2 class="heading">Musique préférée</h2>
                         <div class="content">
+                            {% capture music %} {% include music.md %} {% endcapture %}
+                            {{ music | markdownify }}                               
                             <ul class="list-unstyled">
-                                {% assign musics = site.favorite_music | where: 'status', 'published' %}
-                                {% for music in musics %}     
-                                    <li class="item"><i class="fas fa-headphones"></i> <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - {{ music.album }}</li>
+                                {% assign favorite_music = site.favorite_music | where: 'status', 'published' %}
+                                {% for music in favorite_music %}     
+                                    <li class="item"><i class="fas fa-headphones"></i> <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - <a href="{{ music.link }}">{{ music.album }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div><!--//content-->
@@ -310,21 +286,7 @@ shortName: Icreated Developer
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
-                {% endif %}
-
-                <aside class="credits aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Credits</h2>
-                        <div class="content">
-                             <p class="pt-2">Pour faire ce site, j'ai pris un template gratuit chez <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-portfolio-theme-for-web-developers/" target="_blank">3rd Wave Media</a> créé par <a href="https://twitter.com/3rdwave_themes" target="_blank">Xiaoying Riley</a></p>
-                             <p>J'ai integré <a href="https://jekyllrb.com/">Jekyll</a> dans le template et je jère le deployment avec Github Action ici</p>
-                             <p>Vous pouvez forker ma branche, supprimer mes données perso et utiliser mon integration Jekyll gratuitement sans aucune contrainte.</p>
-                             <hr/>
-                             <p>Si vous voulez enlever le footer du designer du template, regardez bien les conditions de la licence commerciale</p>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-              
+                {% endif %} 
             </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->

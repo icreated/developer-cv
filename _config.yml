@@ -56,8 +56,11 @@ icreated:
 
 collections:
   - skills
+  - projects
+  - experiences
   - certifications
   - languages
   - favorite_music
   - schools
+  - testimonials
   - conferences
