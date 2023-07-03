@@ -140,10 +140,8 @@ shortName: Icreated Developer
                 <section class="github section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Mon activité sur GitHub</h2>
-                        <div class="github-graph"></div><!--//github-graph-->
-                        <script>
-                            GitHubCalendar(".github-graph", "icreated", { responsive: true });
-                        </script>
+                        <div id="github-graph" class="github-graph"></div><!--//github-graph-->
+                        <div id="ghfeed" class="ghfeed"></div><!--//ghfeed-->
                     </div><!--//secton-inner-->
                 </section><!--//section-->
             </div><!--//primary-->
@@ -251,8 +249,6 @@ shortName: Icreated Developer
                         <h2 class="heading">Latest Blog Posts</h2>
                         <p>You can use Sascha Depold's <a href="https://github.com/sdepold/jquery-rss" target="_blank">Vanilla RSS plugin</a> to pull in your blog post feeds.</p>
                         <div id="rss-feeds" class="content">
-
-                        </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
                 

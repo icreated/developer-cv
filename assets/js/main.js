@@ -10,7 +10,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 	const rss = new RSS(
 	    document.querySelector("#rss-feeds"),
 	    //Change this to your own rss feeds
-        "https://feeds.feedburner.com/TechCrunch/startups",
+        "https://icreated.co/feed.xml",
 	    {
 		     // how many entries do you want?
 		    // default: 4
@@ -39,8 +39,8 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
     
     /* Github Calendar - https://github.com/IonicaBizau/github-calendar */
-    new GitHubCalendar("#github-graph", "IonicaBizau", { responsive: true });
+    new GitHubCalendar("#github-graph", "icreated", { responsive: true });
     
     
     /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
-    GitHubActivity.feed({ username: "mdo", selector: "#ghfeed" });
+    GitHubActivity.feed({ username: "icreated", selector: "#ghfeed" });
