@@ -10,7 +10,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 	const rss = new RSS(
 	    document.querySelector("#rss-feeds"),
 	    //Change this to your own rss feeds
-        "https://cors.io/?https://icreated.co/feed.xml",
+        "https://icreated.co/feed.xml",
 	    {
 		     // how many entries do you want?
 		    // default: 4
