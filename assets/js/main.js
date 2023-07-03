@@ -16,7 +16,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 		    // default: 4
 		    // valid values: any integer
 		    limit: 3,
-		    
+		    host: "feed.icreated.fr",
 		    
 		    // will request the API via https
 			// default: false
