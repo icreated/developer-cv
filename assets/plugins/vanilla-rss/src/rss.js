@@ -149,6 +149,7 @@ export default class RSS {
 
     const data = await fetch(apiUrl, {
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       }
     });

@@ -12,6 +12,8 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 	    //Change this to your own rss feeds
         "https://icreated.co/feed.xml",
 	    {
+
+
 		     // how many entries do you want?
 		    // default: 4
 		    // valid values: any integer
