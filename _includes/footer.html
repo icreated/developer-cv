@@ -9,12 +9,33 @@
     <!-- Javascript -->          
     <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/plugins/vanilla-rss/dist/rss.global.min.js"></script> 
     <script type="text/javascript" src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script> 
     <!-- github activity plugin -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
     <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            callFeed();
+        }, false);
+
+        function callFeed() {
+            fetch("https://icreated.co/feed.xml")
+                .then(response => response.text())
+                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                .then(data => {
+                    const items = data.querySelectorAll("entry");
+                    let html = ``;
+                    items.forEach(el => {
+                        html += `
+                        <li class="item"><a href="${el.querySelector("[href]").getAttribute("href")}" target="_blank"><i class="fas fa-external-link-alt"></i>&nbsp;  ${el.querySelector("title").innerHTML}</a><li>
+                        `;
+                        });   
+                        document.querySelector("#rss-feeds").innerHTML = html;                
+                })
+        }
+
+    </script>
 </body>
 </html> 
