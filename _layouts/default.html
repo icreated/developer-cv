@@ -2,7 +2,29 @@
 
   <div>
     <section id="main_content">
-      {{ content }}
+      <div class="container sections-wrapper py-5">
+        <div class="row">
+          <div class="primary col-lg-8 col-12">
+            {{ content }}
+
+            {% if page.url == "/" %}
+              <section class="github section">
+                <div class="section-inner shadow-sm rounded">
+                    <h2 class="heading">Mon activité sur GitHub</h2>
+                    <div id="github-graph" class="github-graph"></div><!--//github-graph-->
+                    <div id="ghfeed" class="ghfeed"></div><!--//ghfeed-->
+                </div><!--//secton-inner-->
+              </section><!--//section-->
+              {% else %}
+              <div id="github-graph" class="invisible"></div>
+              <div id="ghfeed" class="invisible"></div>
+            {% endif %}      
+          </div>
+          <div class="secondary col-lg-4 col-12">
+            {% include side-panel.html %}
+          </div>
+      </div><!--//row-->
+    </div><!--//masonry-->
     </section>
   </div>
 {% include footer.html %}

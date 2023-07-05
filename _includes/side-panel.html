@@ -1,0 +1,162 @@
+<aside class="info aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading sr-only">Basic Information</h2>
+        <div class="content">
+            <ul class="list-unstyled">
+                <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>{{ site.icreated.location }}</li>
+                <li><i class="fas fa-link"></i><span class="sr-only">{{ site.icreated.links.blog.title }}:</span><a href="{{ site.icreated.links.blog.url }}">{{ site.icreated.links.blog.url }}</a></li>
+            </ul>
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</aside><!--//aside-->
+
+<aside class="skills aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Compétences</h2>
+        <div class="content">
+            <p class="intro">
+                {% capture skills %} {% include skills.md %} {% endcapture %}
+                {{ skills | markdownify }}
+            </p>
+            <div class="skillset">
+                {% assign skills = site.skills | where: 'status', 'published' %}
+                {% for skill in skills %}
+                <div class="item">
+                    <h3 class="level-title">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
+                    <div class="level-bar progress">
+                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percentage }}%" aria-valuenow="{{ skill.percentage }}"  aria-valuemin="0" aria-valuemax="100"></div>
+                    </div><!--//level-bar-->                                  
+                </div><!--//item-->                                
+                {% endfor %}                     
+                
+                <p><a class="more-link" href="{{ site.icreated.links.github.url }}"><i class="fas fa-external-link-alt"></i>Voir sur GitHub</a></p> 
+            </div>              
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</aside><!--//section-->
+
+{% assign testimonials = site.testimonials | where: 'status', 'published' %}
+{% if testimonials.size > 0 %}                
+<aside class="testimonials aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Testimonials</h2>
+        <div class="content">
+            {% for testimonial in testimonials %}                 
+            <div class="item">
+                <blockquote class="quote">                                  
+                    <p><i class="fas fa-quote-left"></i>{{ testimonial.content }}</p>
+                </blockquote>                
+                <p class="source"><span class="name">{{ testimonial.name }}</span><br /><span class="title">{{ testimonial.company }}</span></p>                                                             
+            </div>
+            {% endfor %}
+            <p><a class="more-link" href="#"><i class="fas fa-external-link-alt"></i>More on Linkedin</a></p> 
+        </div>
+    </div>
+</aside>
+{% endif %}
+
+<aside class="education aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Education</h2>
+        <div class="content">
+            {% capture education %} {% include education.md %} {% endcapture %}
+            {{ education | markdownify }}
+
+            {% assign schools = site.schools | where: 'status', 'published' %}
+            {% for school in schools %}                              
+            <div class="item">                      
+                <h3 class="title"><i class="fas fa-graduation-cap"></i>{{ school.graduation }}</h3>
+                <h4 class="university">{{ school.title }} <span class="year">({{ school.years }})</span></h4>
+            </div><!--//item-->
+            {% endfor %}
+        </div><!--//content-->
+    </div><!--//section-inner-->
+</aside><!--//section-->
+            
+<aside class="languages aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Languages</h2>                     
+        <div class="content">
+            {% capture languages %} {% include languages.md %} {% endcapture %}
+            {{ languages | markdownify }}   
+            <ul class="list-unstyled">
+                {% assign languages = site.languages | where: 'status', 'published' %}
+                {% for language in languages %}       
+                    <li class="item">
+                        <span class="title"><strong>{{ language.title }}:</strong></span>
+                        <span class="level">{{ language.level }}<br class="visible-xs"/> 
+                            {% for rate in (1..language.rate) %} 
+                                <i class="fas fa-star"></i>
+                            {% endfor %}
+                        </span>
+                    </li><!--//item-->
+                {% endfor %}
+            </ul>
+        </div><!--//content-->
+    </div><!--//section-inner-->
+</aside><!--//section-->
+
+<aside class="blog aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Mes derniers articles</h2>
+        <div class="content">
+            <ul id="rss-feeds" class="list-unstyled">
+
+            </ul>
+    </div><!--//section-inner-->
+</aside><!--//section-->
+
+<aside class="list music aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Musique préférée</h2>
+        <div class="content">
+            {% capture music %} {% include music.md %} {% endcapture %}
+            {{ music | markdownify }}                               
+            <ul class="list-unstyled">
+                {% assign favorite_music = site.favorite_music | where: 'status', 'published' %}
+                {% for music in favorite_music %}     
+                    <li class="item"><i class="fas fa-headphones"></i> <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - <a href="{{ music.link }}">{{ music.album }}</a></li>
+                {% endfor %}
+            </ul>
+        </div><!--//content-->
+    </div><!--//section-inner-->
+</aside><!--//section-->
+
+{% assign conferences = site.conferences | where: 'status', 'published' %}
+{% if conferences.size > 0 %}
+<aside class="list conferences aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Conferences</h2>
+        <div class="content">
+            <ul class="list-unstyled">
+                {% for conference in conferences %}  
+                    <li><i class="far fa-calendar-alt"></i> <a href="{{ conference.link }}" target="_blank">{{ conference.title }}</a> ({{ conference.location }})</li>
+                {% endfor %}
+            </ul>
+        </div><!--//content-->
+    </div><!--//section-inner-->
+</aside><!--//section-->
+{% endif %} 
+
+<aside class="skills aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Savoir-être</h2>
+        <div class="content">
+            <p class="intro">
+                {% capture skills %} {% include soft_skills.md %} {% endcapture %}
+                {{ skills | markdownify }}
+            </p>
+            <div class="skillset">
+                {% assign skills = site.soft_skills | where: 'status', 'published' %}
+                {% for skill in skills %}
+                <div class="item">
+                    <h3 class="level-title">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
+                    <div class="level-bar progress">
+                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percentage }}%" aria-valuenow="{{ skill.percentage }}"  aria-valuemin="0" aria-valuemax="100"></div>
+                    </div><!--//level-bar-->                                  
+                </div><!--//item-->                                
+                {% endfor %}                     
+            </div>              
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</aside><!--//section-->

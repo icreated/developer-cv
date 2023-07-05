@@ -1,4 +1,4 @@
-title: ∫Created - Sergey Polyarus
+title: ∫created - Sergey Polyarus
 email: your-email@example.com
 description: Developpeur Fullstack en freelance Java, Kotlin, SpringBoot, Angular
 header:
@@ -15,6 +15,7 @@ github_username:  jekyll
 # theme: minima
 plugins:
   - jekyll-feed
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -55,13 +56,26 @@ icreated:
       url: https://www.credly.com/users/sergey-polyarus/badges
 
 collections:
-  - skills
-  - soft_skills
-  - projects
-  - experiences
-  - certifications
-  - languages
-  - favorite_music
-  - schools
-  - testimonials
-  - conferences
+  skills:
+    output: true
+  soft_skills:
+    output: true
+  projects:
+    output: true
+  experiences:
+    output: true
+  certifications:
+    output: true
+    permalink: /certification/:path/
+  education:
+    output: true
+  languages:
+    output: true
+  favorite_music:
+    output: true
+  schools:
+    output: true
+  testimonials:
+    output: true
+  conferences:
+    output: true

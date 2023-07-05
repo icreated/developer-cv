@@ -11,3 +11,11 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     
     /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
     GitHubActivity.feed({ username: "icreated", selector: "#ghfeed" });
+
+function goBack() {
+	if (document.referrer == "") {
+		window.location.href = "/"
+	} else {
+		history.back()
+	}
+}

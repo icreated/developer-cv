@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="javascript:goBack()"> Accueil</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{{ '/#' | append: page.category | relative_url }}">{{ page.category }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ page.title}}</li>
+  </ol>
+</nav>
+
+<section class="post section">
+  <div class="section-inner shadow-sm rounded">
+      <h2 class="heading">{{ page.title}}</h2>
+      <div class="content">
+        {{content}}
+      </div><!--//content-->
+  </div><!--//section-inner-->                 
+</section><!--//section-->
+
+
+
+
+

@@ -9,25 +9,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.author }}">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <link rel="shortcut icon" href="{{ 'favicon.ico?v=' | append: site.github.build_revision | relative_url }}">  
     
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
     
     <!-- FontAwesome JS -->
-    <script defer src="assets/fontawesome/js/all.js"></script>
+    <script defer src="{{ 'assets/fontawesome/js/all.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script type="text/javascript" src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>    
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}">  
     
     <!-- github calendar css -->
-    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar-responsive.css">
+    <link rel="stylesheet" href="{{ 'assets/plugins/github-calendar/dist/github-calendar-responsive.css?v=' | append: site.github.build_revision | relative_url }}">
     <!-- github activity css -->  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">  
-    <link rel="stylesheet" href="assets/plugins/github-activity/src/github-activity.css">
+    <link rel="stylesheet" href="{{ 'assets/plugins/github-activity/src/github-activity.css?v=' | append: site.github.build_revision | relative_url }}">
 
     <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">  
+    <link id="theme-style" rel="stylesheet" href="{{ 'assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}">  
 
 
     </head>
@@ -37,8 +37,10 @@
     <header class="header">
         <div class="container">     
 	        <div class="row align-items-center">
-			    <div class="col">         
-		            <img class="profile-image img-fluid float-start rounded-circle" src="assets/images/profile.png" alt="profile image" />
+			    <div class="col">
+                    <a href="{{ '/' | absolute_url }}">
+                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.png?v=' | append: site.github.build_revision | relative_url }}" alt="profile image" />
+                    </a>      
 		            <div class="profile-content">
 		                <h1 class="name">{{ site.header.title }}</h1>
 		                <h2 class="desc">{{ site.header.description }}</h2>   

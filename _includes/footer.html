@@ -1,4 +1,5 @@
-    <!-- ******FOOTER****** --> 
+ 
+ <!-- ******FOOTER****** --> 
     <footer class="footer">
         <div class="container text-center">
                 <!--/* This template is free as long as you keep the attribution link below. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
@@ -7,14 +8,14 @@
     </footer><!--//footer-->
  
     <!-- Javascript -->          
-    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script> 
+    <script type="text/javascript" src="{{ 'assets/plugins/popper.min.js' | relative_url }}"></script> 
+    <script type="text/javascript" src="{{ 'assets/plugins/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>    
+    <script type="text/javascript" src="{{ 'assets/plugins/dark-mode-switch/dark-mode-switch.min.js' | relative_url }}"></script> 
     <!-- github activity plugin -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
+    <script type="text/javascript" src="{{ 'assets/plugins/github-activity/src/github-activity.js' | relative_url }}"></script>
     <!-- custom js -->
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="{{ 'assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             callFeed();
