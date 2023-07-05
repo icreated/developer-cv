@@ -285,6 +285,30 @@ shortName: Icreated Developer
                     </div><!--//section-inner-->
                 </aside><!--//section-->
                 {% endif %} 
+
+                <aside class="skills aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Savoir-être</h2>
+                        <div class="content">
+                            <p class="intro">
+                                {% capture skills %} {% include soft_skills.md %} {% endcapture %}
+                                {{ skills | markdownify }}
+                            </p>
+                            <div class="skillset">
+                                {% assign skills = site.soft_skills | where: 'status', 'published' %}
+                                {% for skill in skills %}
+                                <div class="item">
+                                    <h3 class="level-title">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
+                                    <div class="level-bar progress">
+                                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percentage }}%" aria-valuenow="{{ skill.percentage }}"  aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div><!--//level-bar-->                                  
+                                </div><!--//item-->                                
+                                {% endfor %}                     
+                            </div>              
+                        </div><!--//content-->  
+                    </div><!--//section-inner-->                 
+                </aside><!--//section-->
+
             </div><!--//secondary-->    
         </div><!--//row-->
     </div><!--//masonry-->
