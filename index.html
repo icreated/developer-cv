@@ -99,7 +99,7 @@ shortName: Icreated Developer
                         <div class="desc text-start">                                    
                             {{ project.description }}
                         </div><!--//desc-->         
-                        <a class="btn btn-cta-secondary" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank"><i class="fas fa-thumbs-up"></i>En savoir plus</a>                 
+                        <a class="btn btn-cta-secondary" href="{{ project.link }}" target="_blank"><i class="fas fa-thumbs-up"></i>En savoir plus</a>                 
                     </div><!--//item-->
                     <hr class="divider" />   
                 {% endfor %}                         
@@ -128,7 +128,7 @@ shortName: Icreated Developer
                                 {% endif %}
                             </h3>
                             <p class="mb-2">{{ project.description }}</p>
-                            <p><a class="more-link" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
+                            <p><a class="more-link" href="{{ project.link }}" target="_blank"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
                         </div><!--//desc-->                          
                     </div><!--//item-->
                 {% endfor %}
