@@ -40,7 +40,7 @@ shortName: Icreated Developer
         <div class="content">
             {% capture certif %} {% include certifications.md %} {% endcapture %}
             {{ certif | markdownify }}                            
-            {% assign certifications = site.certifications | where: 'status', 'published' | sort:"order" %}
+            {% assign certifications = site.certifications | where: 'status', 'published' | sort: 'order' %}
             {% for certification in certifications %}  
                 <div class="item row">
                     <a class="col-md-4 col-12" href="{{ certification.certificationUrl}}" target="_blank">

@@ -1,6 +1,6 @@
 - Je suis en freelance depuis quelques années et je travaille principalement sur des projets API REST.
 - Je préfère Kotlin à Java, mais je peux travailler avec les deux.
-- J'aime Angular, mais d'autres frameworks frontaux ne me font pas peur.
+- J'aime Angular, mais les autres frameworks sont aussi bien.
 - Je suis très curieux de nature et j'aime apprendre de nouvelles choses tell que des langages de programmation, les frameworks, les méthodologies, etc.
 - J'aime partager mes connaissances avec les autres.
-- Je ne suis pas intéressé par WinDev, C++, C#, .Net, PHP, Python, Ruby, etc.
+- Je ne suis pas intéressé par WinDev, C++, C#, .Net, PHP, Python, Ruby, etc. :smile:
