@@ -1,5 +1,5 @@
 ---
-name: Spring
+name: Spring Boot
 title: Spring framework
 status: published
 level: Expert

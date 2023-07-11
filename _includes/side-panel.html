@@ -65,7 +65,7 @@
             {% assign schools = site.schools | where: 'status', 'published' %}
             {% for school in schools %}                              
             <div class="item">                      
-                <h3 class="title"><i class="fas fa-graduation-cap"></i>{{ school.graduation }}</h3>
+                <h3 class="title"><i class="fas fa-graduation-cap"></i> {{ school.graduation }}</h3>
                 <h4 class="university">{{ school.title }} <span class="year">({{ school.years }})</span></h4>
             </div><!--//item-->
             {% endfor %}
