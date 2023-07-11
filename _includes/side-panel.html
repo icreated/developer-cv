@@ -147,7 +147,7 @@
                 {{ skills | markdownify }}
             </p>
             <div class="skillset">
-                {% assign skills = site.soft_skills | where: 'status', 'published' %}
+                {% assign skills = site.soft_skills | where: 'status', 'published' | sort: 'order' %}
                 {% for skill in skills %}
                 <div class="item">
                     <h3 class="level-title">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>

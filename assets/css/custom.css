@@ -1,0 +1,27 @@
+.tag {
+    display: inline-block;
+    border-radius: 5px;
+    padding: .2em .5em .3em;
+    background: #3AAA64;
+    opacity: .8;
+    color: #e8e8e8;
+    font-weight: 600;
+    margin: .25em .1em
+}
+
+h1.tag {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.tag-sm {
+    font-size: .7em;
+    display: inline-block;
+    letter-spacing: .15ch;
+    font-weight: 400
+}
+
+.tag-lg {
+    font-size: 1.2em;
+    border-radius: 4px
+}

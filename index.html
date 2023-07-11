@@ -16,6 +16,59 @@ shortName: Icreated Developer
     </div><!--//section-inner-->                 
 </section><!--//section-->
 
+<section class="experience section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Experience Freelance</h2>
+        <div class="content">
+            {% assign experiences = site.experiences | where: 'status', 'published' | sort: 'order' | reverse %}
+            {% for experience in experiences %}  
+                <div class="item">
+                    <h3 class="title">{{ experience.title }} - <span class="place"><a href="{{ experience.link }}">{{ experience.company }}</a></span> <span class="year">({{ experience.dates }})</span></h3>
+                    {{ experience.content }}
+                    {% for skill in experience.skills %}  
+                    <span class="tag tag-{{ tag }} --gray">#{{ skill }}</a></span>
+                    {% endfor %}
+                </div><!--//item-->
+            {% endfor %}
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</section><!--//section-->                
+
+<section class="projects section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading" id="Certification">Certifications</h2>
+        <div class="content">
+            {% capture certif %} {% include certifications.md %} {% endcapture %}
+            {{ certif | markdownify }}                            
+            {% assign certifications = site.certifications | where: 'status', 'published' | sort:"order" %}
+            {% for certification in certifications %}  
+                <div class="item row">
+                    <a class="col-md-4 col-12" href="{{ certification.certificationUrl}}" target="_blank">
+                        <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl}}" alt="Badge {{ certification.title }}" height="156px"/>
+                    </a>
+                    <div class="desc col-md-8 col-12">
+                        <h3 class="title"><a href="{{ certification.certificationUrl}}" target="_blank">
+                            {{ certification.title }}
+                        </a></h3>
+                        <p class="mb-2">
+                            {{ certification.description }}
+                        </p>
+                        <p><a class="more-link" href="{{site.url | append: certification.url }}">
+                            <i class="fas fa-external-link-alt"></i>
+                            En savoir plus
+                            </a>
+                        </p> 
+                    </div><!--//desc-->                          
+                </div><!--//item-->
+            {% endfor %}
+            
+            <a class="btn btn-cta-secondary" href="{{ site.icreated.links.credly.url }}">En savoir plus sur {{ site.icreated.links.credly.title }} <i class="fas fa-chevron-right pt-1"></i></a>
+            
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</section><!--//section-->
+
+
 <section class="latest section">
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Mes Projects</h2>
@@ -84,56 +137,4 @@ shortName: Icreated Developer
         </div><!--//content-->  
     </div><!--//section-inner-->                
 </section><!--//section-->
-
-<section class="experience section">
-    <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Experience Freelance</h2>
-        <div class="content">
-            {% assign experiences = site.experiences | where: 'status', 'published' %}
-            {% for experience in experiences %}  
-                <div class="item">
-                    <h3 class="title">{{ experience.title }} - <span class="place"><a href="{{ experience.link }}">{{ experience.company }}</a></span> <span class="year">({{ experience.dates }})</span></h3>
-                    {{ experience.content }}
-                </div><!--//item-->
-            {% endfor %}
-        </div><!--//content-->  
-    </div><!--//section-inner-->                 
-</section><!--//section-->                
-
-<section class="projects section">
-    <div class="section-inner shadow-sm rounded">
-        <h2 class="heading" id="Certification">Certifications</h2>
-        <div class="content">
-            {% capture certif %} {% include certifications.md %} {% endcapture %}
-            {{ certif | markdownify }}                            
-            {% assign certifications = site.certifications | where: 'status', 'published' | sort:"order" %}
-            {% for certification in certifications %}  
-                <div class="item row">
-                    <a class="col-md-4 col-12" href="{{ certification.certificationUrl}}" target="_blank">
-                        <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl}}" alt="Badge {{ certification.title }}" height="156px"/>
-                    </a>
-                    <div class="desc col-md-8 col-12">
-                        <h3 class="title"><a href="{{ certification.certificationUrl}}" target="_blank">
-                            {{ certification.title }}
-                        </a></h3>
-                        <p class="mb-2">
-                            {{ certification.description }}
-                        </p>
-                        <p><a class="more-link" href="{{site.url | append: certification.url }}">
-                            <i class="fas fa-external-link-alt"></i>
-                            En savoir plus
-                            </a>
-                        </p> 
-                    </div><!--//desc-->                          
-                </div><!--//item-->
-            {% endfor %}
-            
-            <a class="btn btn-cta-secondary" href="{{ site.icreated.links.credly.url }}">En savoir plus sur {{ site.icreated.links.credly.title }} <i class="fas fa-chevron-right pt-1"></i></a>
-            
-        </div><!--//content-->  
-    </div><!--//section-inner-->                 
-</section><!--//section-->
-
-
-
 
