@@ -20,7 +20,7 @@ shortName: Icreated Developer
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Experience Freelance</h2>
         <div class="content">
-            {% assign experiences = site.experiences | where: 'status', 'published' | sort: 'order' %}
+            {% assign experiences = site.experiences | where: 'status', 'published' | sort: 'order' | reverse %}
             {% for experience in experiences %}  
                 <div class="item">
                     <h3 class="title">{{ experience.title }} - <span class="place"><a href="{{ experience.link }}">{{ experience.company }}</a></span> <span class="year">({{ experience.dates }})</span></h3>
