@@ -1,6 +1,6 @@
 - Je suis en freelance depuis quelques années et je travaille principalement sur des projets API REST.
 - Je préfère Kotlin à Java et je peux travailler avec les deux.
 - J'apprécie SpringBoot et Angular. Les autres frameworks sont aussi bien!
-- Je suis très curieux de nature et j'ai hâte d'apprendre de nouvelles choses tell que des langages de programmation, les frameworks, les outils et les méthodologies.
+- Je suis très curieux de nature et j'ai hâte d'apprendre de nouvelles choses telles que des langages de programmation, des frameworks, des outils et des méthodologies.
 - J'aime partager mes connaissances avec les autres.
 - Je ne suis pas intéressé par WinDev, C++, C#, .Net, PHP, Python, Ruby, etc. :smile:
