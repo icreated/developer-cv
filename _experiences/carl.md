@@ -5,7 +5,7 @@ company: Carl Software
 link: "https://carl-software.com"
 status: published
 dates: 2020-05-01 - 2021-05-01
-skills: [Java, J2EE, Hibernate]
+skills: [Java, J2EE, Hibernate, Spring]
 ---
 
 [CARL Software](http://www.carl-software.fr) est un éditeur de Gestion de Maintenance (GMAO) et d’Asset Management.

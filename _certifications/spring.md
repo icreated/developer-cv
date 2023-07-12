@@ -16,7 +16,7 @@ order: 10
 </p>
 
 ### Description
-Cette epreuve est assez difficile et nécessite une bonne connaissance de Spring et Spring Boot. Elle couvre la plupart des sujets de Spring et Spring Boot. Elle est composée de 50 questions à choix multiples et dure 90 minutes. Le score minimum pour réussir est de 76%.
+Cette epreuve est assez difficile et nécessite une bonne connaissance de Spring et Spring Boot. Elle couvre la plupart des sujets de Spring. Elle est composée de 50 questions à choix multiples et dure 90 minutes. Le score minimum pour réussir est de 76%.
 Pour plus d'info [https://www.vmware.com/fr/learning/certification/spring-certified-pro.html](https://www.vmware.com/fr/learning/certification/spring-certified-pro.html)
 
 ### Préparation
@@ -38,17 +38,17 @@ Ces conseils sont basés sur mon épreuve. Je ne peux pas garantir que vous aure
 
 - Spring Core:
     * maitriser les cycles de vie des beans, l'ordre d'initialisation des beans
-    * maitriser les scopes des beans et méta annotations (Regarder aussi tous les paramètres possible des annotations)
+    * maitriser les scopes des beans et méta annotations (Regarder aussi tous les paramètres possibles des annotations)
     * comprendre la différence entre Jdk Dynamic Proxy et CGLIB
 - AOP:
     * mmm, il faut tout maitriser, pratiquer beaucoup
 - JDBC / Transactions:
     * maitriser **JdbcTemplate**. Connaitre les différences entre **RowMapper**, **ResultExtractor**, **PreparedCallback** etc.
-    * maitriser TransactionTemplate, TransactionManager et @Transactional
+    * maitriser **TransactionTemplate**, **TransactionManager** et **@Transactional**
     * connaitre les différences entre les types de propagation et les types d'isolation des transactions
     * trouver les informations sur les transactions globales JTA. J'en ai eu une question.
 - Spring MVC:
-    * entrées et les sorties des contrôleurs. Bien les connaitre toutes!
+    * les entrées et les sorties des contrôleurs. Bien les connaitre toutes!
 - Spring Boot:
     * Ordre de chargement des fichiers de configuration
     * Différence entre **CommandLineRunner** et **ApplicationRunner**
