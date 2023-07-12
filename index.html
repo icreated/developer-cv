@@ -50,8 +50,8 @@ shortName: Icreated Developer
                         <h3 class="title"><a href="{{ certification.certificationUrl}}" target="_blank">
                             {{ certification.title }}
                         </a></h3>
-                        <p class="mb-2">
-                            {{ certification.description }}
+                        <p class="mb-2"> 
+                            {{ certification.description | markdownify }}
                         </p>
                         <p><a class="more-link" href="{{site.url | append: certification.url }}">
                             <i class="fas fa-external-link-alt"></i>
