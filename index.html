@@ -75,7 +75,7 @@ shortName: Icreated Developer
 
 <section class="latest section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Mes Projects</h2>
+        <h2 class="heading" id="Projet">Mes Projects</h2>
         <div class="content">
             {% assign featured_projects = site.projects | where: 'status', 'featured' %}
             {% if featured_projects.size > 0 %}
@@ -104,7 +104,7 @@ shortName: Icreated Developer
                             {{ project.description }}
                         </div><!--//desc-->
                         {% if project.content.size > 1 %}
-                        <a class="btn btn-cta-secondary" href="{{ project.link }}" target="_blank"><i class="fas fa-thumbs-up"></i>En savoir plus</a>
+                        <a class="btn btn-cta-secondary" href="{{site.url | append: project.url }}"><i class="fas fa-thumbs-up"></i>En savoir plus</a>
                         {% endif %}               
                     </div><!--//item-->
                     <hr class="divider" />   
@@ -135,7 +135,7 @@ shortName: Icreated Developer
                             </h3>
                             <p class="mb-2">{{ project.description }}</p>
                             {% if project.content.size > 1 %}
-                            <p><a class="more-link" href="{{ project.link }}" target="_blank"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
+                            <p><a class="more-link" href="{{ site.url | append: project.url }}"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
                             {% endif %}
                         </div><!--//desc-->                          
                     </div><!--//item-->

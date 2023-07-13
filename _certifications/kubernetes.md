@@ -27,7 +27,7 @@ Pour plus d'info [https://www.cncf.io/certification/ckad/](https://www.cncf.io/c
 ### Préparation
 Pour passer cette certification il faut avoir une bonne expérience de Kubernetes. J'ai passé cette certification après avoir travaillé avec Kubernetes pendant 1 an.
 La préparation m'a pris 3 mois d'entraiement intensif. 
-J'ai passé beaucoup de temps à faire des exercices pratiques et à lire quelques magnifiques livres sur Kubernetes.
+J'ai passé beaucoup de temps à faire des exercices pratiques et à lire quelques magnifiques livres sur Kubernetes, par exemple: Kubernetes in Action de Marko Luksa.
 
 Il faut:
 - Très bien maitriser la commande **kubectl** et il faut connaitre pratiquement **TOUTES** les options de cette commande.

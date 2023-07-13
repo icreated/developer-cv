@@ -117,7 +117,14 @@
             <ul class="list-unstyled">
                 {% assign favorite_music = site.favorite_music | where: 'status', 'published' %}
                 {% for music in favorite_music %}     
-                    <li class="item"><i class="fas fa-headphones"></i> <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - <a href="{{ music.link }}">{{ music.album }}</a></li>
+                    <li class="item">
+                        {% if music.isAlbum %}
+                            <i class="fas fa-compact-disc"></i>
+                        {% else %}
+                            <i class="fas fa-headphones"></i> 
+                        {% endif %}
+                        <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - <a href="{{ music.link }}">{{ music.title }}</a>
+                    </li>
                 {% endfor %}
             </ul>
         </div><!--//content-->

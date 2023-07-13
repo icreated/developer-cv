@@ -65,25 +65,26 @@ icreated:
 
 collections:
   skills:
-    output: true
+    output: false
   soft_skills:
-    output: true
+    output: false
   projects:
     output: true
+    permalink: /project/:path/
   experiences:
-    output: true
+    output: false
   certifications:
     output: true
     permalink: /certification/:path/
   education:
-    output: true
+    output: false
   languages:
-    output: true
+    output: false
   favorite_music:
-    output: true
+    output: false
   schools:
-    output: true
+    output: false
   testimonials:
-    output: true
+    output: false
   conferences:
-    output: true
+    output: false

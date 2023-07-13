@@ -1,6 +1,7 @@
 ---
 artist: Anabel Montesinos
-album: Alma Llanera
+isAlbum: true
+title: Alma Llanera
 link: https://www.deezer.com/fr/album/418162487
 status: published
 sitemap: false

@@ -1,0 +1,48 @@
+---
+title: Contact
+layout: default
+---
+
+
+<section class="section">
+    <div class="section-inner shadow-sm rounded" style="height: 3em; padding: 0.75em;">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="javascript:goBack()"> Accueil</a></li>
+          <li class="breadcrumb-item" aria-current="page">{{ page.title}}</li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  
+  
+  <section class="post section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">{{ page.title}}</h2>
+        <div class="content">
+
+            <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/d2461e5353af0d139494b58b202d3368?embedded=1"></div>
+
+            <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+            <script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+            
+            <!-- Get notified when the form is submitted, add your own code below: -->
+            <script>
+            const formkeepEmbed = document.querySelector('#formkeep-embed')
+            
+            formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+              console.log('Submitting form...')
+            })
+            
+            formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+              console.log('Submitted form...')
+            })
+            </script>
+
+
+        </div><!--//content-->
+    </div><!--//section-inner-->                 
+  </section><!--//section-->
+  
+
+
