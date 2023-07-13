@@ -16,6 +16,13 @@ github_username:  jekyll
 plugins:
   - jekyll-seo-tag
   - jemoji
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: assets/**
+    values:
+      sitemap: false
 
 
 # Exclude from processing.

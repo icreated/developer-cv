@@ -50,14 +50,18 @@ shortName: Icreated Developer
                         <h3 class="title"><a href="{{ certification.certificationUrl}}" target="_blank">
                             {{ certification.title }}
                         </a></h3>
+                        
                         <p class="mb-2"> 
                             {{ certification.description | markdownify }}
                         </p>
+                        
+                        {% if certification.content.size > 1 %}
                         <p><a class="more-link" href="{{site.url | append: certification.url }}">
                             <i class="fas fa-external-link-alt"></i>
                             En savoir plus
                             </a>
-                        </p> 
+                        </p>
+                        {% endif %}
                     </div><!--//desc-->                          
                 </div><!--//item-->
             {% endfor %}
@@ -98,8 +102,10 @@ shortName: Icreated Developer
                         </h3>
                         <div class="desc text-start">                                    
                             {{ project.description }}
-                        </div><!--//desc-->         
-                        <a class="btn btn-cta-secondary" href="{{ project.link }}" target="_blank"><i class="fas fa-thumbs-up"></i>En savoir plus</a>                 
+                        </div><!--//desc-->
+                        {% if project.content.size > 1 %}
+                        <a class="btn btn-cta-secondary" href="{{ project.link }}" target="_blank"><i class="fas fa-thumbs-up"></i>En savoir plus</a>
+                        {% endif %}               
                     </div><!--//item-->
                     <hr class="divider" />   
                 {% endfor %}                         
@@ -128,7 +134,9 @@ shortName: Icreated Developer
                                 {% endif %}
                             </h3>
                             <p class="mb-2">{{ project.description }}</p>
+                            {% if project.content.size > 1 %}
                             <p><a class="more-link" href="{{ project.link }}" target="_blank"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
+                            {% endif %}
                         </div><!--//desc-->                          
                     </div><!--//item-->
                 {% endfor %}
