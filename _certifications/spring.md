@@ -5,7 +5,7 @@ company: VMware
 description: |
   Examen de certification Spring Professional de VMware confirme les connaissances et les compétences de base nécessaires pour développer des applications et des services Spring et Spring Boot.
 status: published
-badgeUrl: /assets/images/badges/vmware-spring-professional.png
+badgeUrl: /assets/images/badges/vmware-spring-professional.avif
 certificationUrl: https://www.credly.com/badges/ff60dd0e-409a-4d54-88f9-cc284a59b9bb/public_url
 layout: post
 order: 10
@@ -69,7 +69,7 @@ Ces conseils sont basés sur mon épreuve. Je ne peux pas garantir que vous aure
 
 
 ### Conclusion
-Les examens blancs que j'avais passé avant ne couvrent que la moitié des questions de l'examen réel. C'est bien util de les passer pour se préparer mais il faut aussi lire la doc de Spring et Spring Boot. Surtout travailler les points faibles.
+Les examens blancs que j'avais passés avant ne couvrent que la moitié des questions de l'examen réel. C'est bien util de les passer pour se préparer mais il faut aussi lire la doc de Spring et Spring Boot. Surtout travailler les points faibles.
 
 J'espère que mon expérience vous aidera à réussir aussi. Bonne chance!
 

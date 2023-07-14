@@ -2,12 +2,15 @@
     display: inline-block;
     border-radius: 5px;
     padding: .2em .5em .3em;
-    background: #3AAA64;
-    opacity: .8;
-    color: #e8e8e8;
+    background: #66CB8C;
+    color: #f7f7f7;
     font-weight: 600;
     margin: .25em .1em
 }
+
+body[data-theme="dark"] .tag {
+    background: #3AAA64;
+  }
 
 h1.tag {
     margin-left: 0;

@@ -7,7 +7,7 @@ description: |
 status: featured
 layout: post
 link: https://icreated.co/projects/webstore
-imageUrl: /assets/images/projects/idempiere-webstore.png
+imageUrl: /assets/images/projects/idempiere-webstore.avif
 ---
 
 <p align="center">

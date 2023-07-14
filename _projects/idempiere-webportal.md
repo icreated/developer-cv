@@ -7,11 +7,11 @@ description: |
 status: published
 layout: post
 link: https://icreated.co/projects/webportal
-imageUrl: /assets/images/projects/idempiere-webportal.png
+imageUrl: /assets/images/projects/idempiere-webportal.avif
 ---
 
 <p align="center">
-<img src="{{ page.imageUrl }}" alt="{{ page.title }}" style="width: 500px;">
+<img src="{{ page.imageUrl }}" alt="{{ page.title }}" style="width: 600px;">
 </p>
 
 # Frontend WebPortal

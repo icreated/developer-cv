@@ -26,7 +26,7 @@ shortName: Icreated Developer
                     <h3 class="title">{{ experience.title }} - <span class="place"><a href="{{ experience.link }}">{{ experience.company }}</a></span> <span class="year">({{ experience.dates }})</span></h3>
                     {{ experience.content }}
                     {% for skill in experience.skills %}  
-                    <span class="tag tag-{{ tag }}">{{ skill }}</a></span>
+                    <span class="tag">{{ skill }}</a></span>
                     {% endfor %}
                 </div><!--//item-->
             {% endfor %}

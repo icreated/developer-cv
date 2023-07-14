@@ -827,6 +827,3 @@ body[data-theme="dark"] .text-muted {
     max-width: inherit;
   }
 }
-body[data-theme="dark"] .breadcrumb .breadcrumb-item span {
-  color: rgba(255, 255, 255, 0.9);
-}

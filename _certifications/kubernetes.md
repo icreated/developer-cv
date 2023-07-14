@@ -5,7 +5,7 @@ company: The Linux Foundation
 description: |
   La certification Certified Kubernetes Application Developer (CKAD) certifie que les utilisateurs peuvent concevoir, construire, configurer et exposer des applications cloud natives pour Kubernetes.
 status: published
-badgeUrl: /assets/images/badges/ckad-certified-kubernetes-application-developer.png
+badgeUrl: /assets/images/badges/ckad-certified-kubernetes-application-developer.avif
 certificationUrl: https://www.credly.com/badges/903f45bd-1cb5-4a2f-bbd2-67142a43c09c/public_url
 layout: post
 order: 20
