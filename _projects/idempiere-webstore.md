@@ -11,7 +11,7 @@ imageUrl: /assets/images/projects/idempiere-webstore.avif
 ---
 
 <p align="center">
-<img src="{{ page.imageUrl }}" alt="{{ page.title }}" style="width: 500px;">
+<img src="{{ page.imageUrl }}" alt="{{ page.title }}" style="width: 600px;">
 </p>
 
 # WebStore Frontend
