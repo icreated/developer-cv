@@ -63,4 +63,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
       - name: Compress Assets
-        run: find public \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | xargs -0 gzip -9 -kv
+        run: find _site \( -name '*.html' -o -name '*.css' -o -name '*.js' \) -print0 | xargs -0 gzip -9 -kv
