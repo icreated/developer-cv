@@ -108,7 +108,7 @@
 </aside><!--//section-->
 
 
-<aside class="list music aside section">
+<aside class="music aside section">
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading">Musique préférée</h2>
         <div class="content">
@@ -123,7 +123,7 @@
                         {% else %}
                             <i class="fas fa-headphones"></i> 
                         {% endif %}
-                        <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - <a href="{{ music.link }}">{{ music.title }}</a>
+                        <span title="{{ music.description }}"><strong>{{ music.artist }}</strong></span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
