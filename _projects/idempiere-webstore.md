@@ -6,7 +6,7 @@ description: |
     Le projet WebStore est un starter kit pour créer un portail de commerce électronique basé sur Angular et Bootstrap côté Front. Initialement développé pour l'ERP iDempiere pour remplacer le WebStore original qui est devenu obsolète (Servlet/JSP). Il peut être connecté à n'importe quel backend.
 status: featured
 layout: post
-link: https://icreated.co/projects/webstore
+link: https://webstore.icreated.co
 imageUrl: /assets/images/projects/idempiere-webstore.avif
 ---
 
