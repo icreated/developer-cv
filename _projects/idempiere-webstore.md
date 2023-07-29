@@ -16,11 +16,12 @@ imageUrl: /assets/images/projects/idempiere-webstore.avif
 
 # WebStore Frontend
 
-:fire: **Ce projet est en cours de développement actif (amélioration et qualité).** :boom:
-
 Le projet WebStore est un starter kit pour créer un portail de commerce électronique basé sur Angular et Bootstrap côté Front. Initialement développé pour l'ERP iDempiere, il peut être connecté à n'importe quel backend.
 
 L'idée du Projet WebStore est venue de la nécessité de remplacer le WebStore original d'iDempiere qui est devenu obsolète (Servlet/JSP).
+J'utilise ce projet pour tester les nouvelles technologies et les nouvelles approches de développement.
+
+>Par exemple, la migration en Angular 16 m'a permis d'apprendre et d'intégrer les Signaux pour la communication entre les composants. Cette feature a simplifié le code et a rendu le projet plus facile à maintenir.
 
 Le choix de Bootstrap a été fait parce qu'il s'agit d'un portail destiné aux utilisateurs finaux, ce qui permet de mettre en place des templates de design rapidement et facilement.
 
