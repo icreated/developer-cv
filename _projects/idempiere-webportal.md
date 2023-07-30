@@ -6,7 +6,7 @@ description: |
     Starter kit pour créer un portail web basé sur Angular et PrimeNG côté Front. Initialement développé pour l'ERP iDempiere, il peut être utilisé pour tout autre projet. Il est indépendant du backend et peut être facilement connecté à n'importe quel backend.
 status: published
 layout: post
-link: https://icreated.co/projects/webportal
+link: https://webportal.icreated.co
 imageUrl: /assets/images/projects/idempiere-webportal.avif
 ---
 
