@@ -32,28 +32,25 @@ Le choix de Bootstrap a été fait parce qu'il s'agit d'un portail destiné aux 
 * Panier d'achat
 * Checkout
 
+## Démo
+Une démo est disponible sur [https://webstore.icreated.co](https://webstore.icreated.co) avec les données fictives.
+
+## WebStore Backend
+Pour le backend il y a pour l'instant deux options:
+* Très simple Json Server avec des données fictives: [https://github.com/icreated/webstore-json-server](https://github.com/icreated/webstore-json-server)
+* Backend ERP Idempiere
+Le backend est un plugin OSGI pour l'ERP Idempiere. Il est basé sur Jersey Framework (JAX-RS).
+Le choix de Jersey a été fait parce qu'il est facile à intégrer dans l'environnement OSGI d'Idempiere.
+Le plugin est disponible sur [https://github.com/icreated/webstore-api](https://github.com/icreated/webstore-api)
+Pour utiliser le plugin, il faut installer l'ERP Idempiere et le plugin dans le même serveur. C'est assez fastidieux, mais c'est la seule façon de le faire fonctionner.
+
 ## Sources
 Les sources sont disponibles sur [https://github.com/icreated/webstore](https://github.com/icreated/webstore)
 
-De temps en temps j'écris des articles dédiés à ce projet ici: [https://icreated.co/projects/webstore](https://icreated.co/projects/webstore)
+De temps en temps j'écris des articles dédiés à ce projet ici: [https://icreated.co/projects/webstore/](https://icreated.co/projects/webstore/)
 
-# WebStore Backend
-Le backend est un plugin OSGI pour l'ERP Idempiere. Il est basé sur Jersey Framework (JAX-RS).
-Le choix de Jersey a été fait parce qu'il est facile à intégrer dans l'environnement OSGI d'Idempiere.
-
-## Fonctionnalités
-* OpenApi en premier approche pour la communication avec le frontend
-* MapStruct pour mapper les modèles d'Idempiere avec les modèles OpenApi
-* Authentification avec JWT
-
-## Sources
-Les sources sont disponibles sur [https://github.com/icreated/webstore-api](https://github.com/icreated/webstore-api)
-
-De temps en temps j'écris des articles dédiés à ce projet ici: [https://icreated.co/projects/webstore-api/](https://icreated.co/projects/webstore-api/)
-
-# Conclusions
-Ce projet est un bon exemple de la façon dont les technologies modernes peuvent être intégrées dans un environnement plus ancien. 
-
-Les sociétés qui utilisent ERP Idempiere peuvent utiliser ce projet comme un starter kit pour créer leur propre portail de commerce électronique.
+## Conclusions
+* Ce projet peut servir pour apprendre Angular et Bootstrap sur un cas concret.
+* Il peut être utilisé comme starter kit pour créer un portail de commerce électronique. Il peut être connecté à n'importe quel backend.
 
 A mon avis, une application "maison" c'est toujours mieux que les CMS comme Magento, Prestashop, etc. parce qu'elle est plus facile à maintenir et à personnaliser.
