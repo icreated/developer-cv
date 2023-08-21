@@ -35,6 +35,22 @@
     </div><!--//section-inner-->                 
 </aside><!--//section-->
 
+{% assign conferences = site.conferences | where: 'status', 'published' %}
+{% if conferences.size > 0 %}
+<aside class="list conferences aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Conferences</h2>
+        <div class="content">
+            <ul class="list-unstyled">
+                {% for conference in conferences %}  
+                    <li><i class="far fa-calendar-alt"></i> <a href="{{ conference.link }}" target="_blank">{{ conference.title }}</a> ({{ conference.location }})</li>
+                {% endfor %}
+            </ul>
+        </div><!--//content-->
+    </div><!--//section-inner-->
+</aside><!--//section-->
+{% endif %} 
+
 {% assign testimonials = site.testimonials | where: 'status', 'published' %}
 {% if testimonials.size > 0 %}                
 <aside class="testimonials aside section">
@@ -131,21 +147,6 @@
     </div><!--//section-inner-->
 </aside><!--//section-->
 
-{% assign conferences = site.conferences | where: 'status', 'published' %}
-{% if conferences.size > 0 %}
-<aside class="list conferences aside section">
-    <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Conferences</h2>
-        <div class="content">
-            <ul class="list-unstyled">
-                {% for conference in conferences %}  
-                    <li><i class="far fa-calendar-alt"></i> <a href="{{ conference.link }}" target="_blank">{{ conference.title }}</a> ({{ conference.location }})</li>
-                {% endfor %}
-            </ul>
-        </div><!--//content-->
-    </div><!--//section-inner-->
-</aside><!--//section-->
-{% endif %} 
 
 <aside class="skills aside section">
     <div class="section-inner shadow-sm rounded">
