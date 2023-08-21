@@ -1,3 +1,9 @@
+.integral {
+    font-weight: bold;
+    font-size: 38px;
+    color: #3AAA64;
+}
+
 .tag {
     display: inline-block;
     border-radius: 5px;
