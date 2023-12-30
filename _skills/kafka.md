@@ -2,7 +2,7 @@
 name: Apache Kafka
 title: Apache Kafka
 status: published
-level: Intermédiaire
-percentage: 65
+level: Pro
+percentage: 78
 sitemap: false
 ---
