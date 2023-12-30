@@ -4,7 +4,7 @@ order: 30
 company: Cosmotech
 link: "https://cosmotech.com"
 status: published
-dates: 01/09/2022 jusqu'à maintenant
+dates: 01/09/2022 - 15/10/2023
 skills: [Kotlin, Spring Boot, Kubernetes, OpenApi, Python, Azure, Redis Stack, Shell, Github]
 sitemap: false
 ---
