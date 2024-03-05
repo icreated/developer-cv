@@ -193,6 +193,8 @@ var GitHubActivity = (function() {
       var request = new XMLHttpRequest();
       request.open('GET', url);
       request.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+      // SPOK: added header to avoid 403 error
+      request.setRequestHeader('User-Agent', 'request');
       if (config.credentials && config.credentials.username && config.credentials.personalAccessToken) {
         request.setRequestHeader('Authorization', 'Basic ' + btoa(config.credentials.username + ':' + config.credentials.personalAccessToken));
       }
@@ -242,7 +244,8 @@ var GitHubActivity = (function() {
     var selector = options.selector,
         userUrl   = 'https://api.github.com/users/' + options.username,
         eventsUrl = userUrl + '/events',
-        header,
+        // SPOK: added header to avoid 403 error
+        header   = 'User-Agent: request',
         activity;
 
     if (!!options.repository){
