@@ -6,7 +6,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 
     /* Github Calendar - https://github.com/IonicaBizau/github-calendar */
-    new GitHubCalendar("#github-graph", "icreated", { responsive: true });
+    GitHubCalendar("#github-graph", "icreated", { responsive: true });
     
     
     /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
