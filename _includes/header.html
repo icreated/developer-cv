@@ -76,7 +76,14 @@
                                     href="https://credly.com/users/{{ site.social.credly }}"
                                     target="_blank"><i class="fa fa-id-badge fa-2x"></i></a>
                             </li>
-                            {% endif %}                                        
+                            {% endif %}
+                            {% if site.social.youtube %}
+                            <li class="list-inline-item">
+                                <a title="{{ site.social.youtube }} on YouTube"
+                                    href="https://www.youtube.com/@{{ site.social.youtube }}"
+                                    target="_blank"><i class="fab fa-youtube fa-2x"></i></a>    
+                            </li>
+                            {% endif %}                                                                   
 		                </ul> 
 		            </div><!--//profile-->
 			    </div><!--//col-->
