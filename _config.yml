@@ -62,6 +62,9 @@ icreated:
     credly:
       title: Credly
       url: https://www.credly.com/users/sergey-polyarus/badges
+    youtube:
+      title: YouTube
+      url: https://www.youtube.com/@SergeyPolyarus/videos   
 
 collections:
   skills:
