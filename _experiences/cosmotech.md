@@ -1,5 +1,5 @@
 ---
-title: Developpeur backend Kotlin
+title: Développeur backend Kotlin
 order: 30
 company: Cosmotech
 link: "https://cosmotech.com"

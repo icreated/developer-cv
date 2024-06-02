@@ -1,5 +1,5 @@
 ---
-title: Developpeur backend Java / J2EE
+title: Développeur backend Java / J2EE
 order: 10
 company: Carl Software
 link: "https://carl-software.com"

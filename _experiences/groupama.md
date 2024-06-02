@@ -1,5 +1,5 @@
 ---
-title: Developpeur fullstack Java / Angular
+title: Développeur fullstack Java / Angular
 order: 20
 company: Groupama G2S
 link: "https://www.groupama.com/fr/fiche/groupama-supports-et-services/"
