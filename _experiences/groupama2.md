@@ -11,7 +11,7 @@ sitemap: false
 
 [Groupama Supports Services (G2S)](https://www.groupama.com/fr/fiche/groupama-supports-et-services/) est un pôle des services informatiques de Groupama. 
 
-Au sein de l'équipe **PWIE** je développe une application de Poste de travail GGVIE et au sein de l'équipe **ARC** je fais des contributions de décomissionnement de GRC. 
+Au sein de l'équipe **PWIE** je développe une application de Poste de travail GGVIE et au sein de l'équipe **ARC** je fais des contributions de décommissionnement de GRC.
 Notamment j'accomplis les missions suivantes:
 - Développement frontend VueJS
 - Développement des règles métier avec Micronaut
