@@ -126,7 +126,7 @@
 
 <aside class="music aside section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Musique préférée</h2>
+        <h2 class="heading">Musique que je joue</h2>
         <div class="content">
             {% capture music %} {% include music.md %} {% endcapture %}
             {{ music | markdownify }}                               
@@ -134,12 +134,17 @@
                 {% assign favorite_music = site.favorite_music | where: 'status', 'published' %}
                 {% for music in favorite_music %}     
                     <li class="item">
-                        {% if music.isAlbum %}
-                            <i class="fas fa-compact-disc"></i>
+
+                        {% if music.isYoutube %}
+                            <i class="fas fa-brands fa-youtube"></i>
+                            <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
                         {% else %}
-                            <i class="fas fa-headphones"></i> 
-                        {% endif %}
                         <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
+                        <audio controls>
+                            <source src="{{ music.link }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                         {% endif %}
                     </li>
                 {% endfor %}
             </ul>
