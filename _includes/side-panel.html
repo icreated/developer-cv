@@ -126,15 +126,14 @@
 
 <aside class="music aside section">
     <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Musique que je joue</h2>
+        <h2 class="heading">Loisir musical</h2>
         <div class="content">
             {% capture music %} {% include music.md %} {% endcapture %}
             {{ music | markdownify }}                               
             <ul class="list-unstyled">
                 {% assign favorite_music = site.favorite_music | where: 'status', 'published' %}
                 {% for music in favorite_music %}     
-                    <li class="item">
-
+                    <li class="item m-2" >
                         {% if music.isYoutube %}
                             <i class="fas fa-brands fa-youtube"></i>
                             <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
