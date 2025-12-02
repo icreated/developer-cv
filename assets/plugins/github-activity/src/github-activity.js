@@ -194,7 +194,7 @@ var GitHubActivity = (function() {
       request.open('GET', url);
       request.setRequestHeader('Accept', 'application/vnd.github.v3+json');
       // SPOK: added header to avoid 403 error
-      request.setRequestHeader('User-Agent', 'request');
+      // request.setRequestHeader('User-Agent', 'request');
       if (config.credentials && config.credentials.username && config.credentials.personalAccessToken) {
         request.setRequestHeader('Authorization', 'Basic ' + btoa(config.credentials.username + ':' + config.credentials.personalAccessToken));
       }
