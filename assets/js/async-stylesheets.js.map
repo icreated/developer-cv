@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["async-stylesheets.js"],
+  "names": ["document", "addEventListener", "asyncSheets", "querySelectorAll", "forEach", "sheet", "media"],
+  "mappings": "AACAA,SAAS,IACTC,gBAAgB,mBAAoB,CAChC,MAAMC,WAAA,EAAAF,SAAAG,gBAAgB,+BACxBD,YAAAE,SAAA,EAAAC,QAAAC,QAAA,EAAAA,MAAA"
+}

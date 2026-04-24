@@ -28,3 +28,4 @@ function goBack() {
 		history.back()
 	}
 }
+//# sourceMappingURL=main.js.map

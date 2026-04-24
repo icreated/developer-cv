@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["main.js"],
+  "names": ["tooltipTriggerList", "document", "querySelectorAll", "tooltipList", "map", "tooltipTriggerEl", "bootstrap", "Tooltip", "GitHubCalendar", "responsive", "global_stats", "proxy", "username", "fetch", "credentials", "goBack", "referrer", "window", "location", "href", "history", "back"],
+  "mappings": "AAAA,YAEA,MAAMA,mBAAqBC,SAASC,gBAAgB,2BACtDC,YAAcF,SAAUC,gBAExBE,KAAKC,iBACDD,KAAKC,gBAA6DC,EAAAC,SAASA,KAI/EC,eAAe,eAAgB,WACE,CAAC,CAC1CC,WAAY,EACZ,CAC,sBACA,gBACJ,CAAC,gBACDC,WAAY,CAAA,EAClB,EAAE,CACA,mBACE,+BACEhB,gBACEhB,CAKrB,SAAA2B,UAAS,CACDf,SAAAA,gBAAkB,EACTG,AAAAA,KAAKN,KAAOC,IACZ,QAAAA,QAAQ"
+}

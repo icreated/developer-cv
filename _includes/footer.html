@@ -14,28 +14,10 @@
     <!-- github calendar plugin -->
     <script type="text/javascript" src="{{ 'assets/plugins/github-calendar/dist/github-calendar.min.js' | relative_url }}"></script>
     <!-- custom js -->
+    <script type="text/javascript" src="{{ 'assets/js/framebusting.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script type="text/javascript" src="{{ 'assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            callFeed();
-        }, false);
-
-        function callFeed() {
-            fetch("https://icreated.co/feed.xml")
-                .then(response => response.text())
-                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                .then(data => {
-                    const items = data.querySelectorAll("entry");
-                    let html = ``;
-                    items.forEach(el => {
-                        html += `
-                        <li class="item"><a href="${el.querySelector("[href]").getAttribute("href")}" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i>&nbsp;${el.querySelector("title").innerHTML}</a></li>
-                        `;
-                        });   
-                        document.querySelector("#rss-feeds").innerHTML = html;                
-                })
-        }
-
-    </script>
+    <script type="text/javascript" src="{{ 'assets/js/async-stylesheets.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/google-analytics-init.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/feed-loader.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 </body>
 </html> 
