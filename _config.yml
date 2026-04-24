@@ -20,6 +20,9 @@ plugins:
   - jemoji
   - jekyll-sitemap
 
+include:
+  - _headers
+
 defaults:
   - scope:
       path: assets/**

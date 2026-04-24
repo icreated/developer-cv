@@ -1,0 +1,19 @@
+# Cache headers for efficient cache lifetimes
+# Supported by Cloudflare Pages, Netlify, and similar CDNs.
+# Assets use ?v=<build_revision> query strings for cache-busting,
+# so long-lived caches are safe — any deploy invalidates them.
+
+# Immutable versioned assets (images, fonts, audio, CSS, JS)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages — always revalidate
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sitemap and robots — short-lived
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
