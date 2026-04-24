@@ -10,16 +10,18 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
        SVG format and returns zeroes against the current <table> HTML.
        proxy with credentials:omit — prevents api.bloggify.net from
        storing third-party cookies (FB_SESSION) in the browser. */
-    GitHubCalendar("#github-graph", "icreated", {
-        responsive: true,
-        global_stats: false,
-        proxy(username) {
-            return fetch(
-                `https://api.bloggify.net/gh-calendar/?username=${username}`,
-                { credentials: "omit" }
-            );
-        }
-    });
+    if (document.getElementById("github-graph")) {
+        GitHubCalendar("#github-graph", "icreated", {
+            responsive: true,
+            global_stats: false,
+            proxy(username) {
+                return fetch(
+                    `https://api.bloggify.net/gh-calendar/?username=${username}`,
+                    { credentials: "omit" }
+                );
+            }
+        });
+    }
 
 function goBack() {
 	if (document.referrer == "") {
