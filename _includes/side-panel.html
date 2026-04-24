@@ -135,7 +135,7 @@
                 {% for music in favorite_music %}     
                     <li class="item m-2" >
                         {% if music.isYoutube %}
-                            <i class="fas fa-brands fa-youtube"></i>
+                            <i class="fab fa-youtube"></i>
                             <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
                         {% else %}
                         <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
