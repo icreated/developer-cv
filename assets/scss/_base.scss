@@ -381,6 +381,7 @@ a.dotted-link {
             position: relative;
             margin-top: 0;
             margin-bottom: 10;
+            color: darken($color, 10%);
             .level-label {
                 color: lighten($color, 30%);
                 font-size: 14px;

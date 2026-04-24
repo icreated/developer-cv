@@ -37,6 +37,14 @@ body[data-theme="dark"] {
 	a:hover {
         color: lighten($color-2, 10%);
 	}
+
+	.footer a {
+		color: #fff;
+	}
+
+	.skillset .level-title {
+		color: $dm-text-color;
+	}
 	
 	a.btn:hover {
 		color: #fff;
