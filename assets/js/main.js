@@ -7,9 +7,19 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
     /* Github Calendar - https://github.com/IonicaBizau/github-calendar
        global_stats: false — the bundled parser expects GitHub's old
-       SVG format and returns zeroes against the current <table> HTML,
-       producing "0 total / Rock - Hard Place" fallback text. */
-    GitHubCalendar("#github-graph", "icreated", { responsive: true, global_stats: false });
+       SVG format and returns zeroes against the current <table> HTML.
+       proxy with credentials:omit — prevents api.bloggify.net from
+       storing third-party cookies (FB_SESSION) in the browser. */
+    GitHubCalendar("#github-graph", "icreated", {
+        responsive: true,
+        global_stats: false,
+        proxy(username) {
+            return fetch(
+                `https://api.bloggify.net/gh-calendar/?username=${username}`,
+                { credentials: "omit" }
+            );
+        }
+    });
 
 function goBack() {
 	if (document.referrer == "") {
