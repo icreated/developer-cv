@@ -46,8 +46,26 @@ body[data-theme="dark"] {
 		color: $dm-text-color;
 	}
 	
-	a.btn:hover {
-		color: #fff;
+	a.btn-cta-primary, .btn-cta-primary {
+		background: #54ba4e;
+		border-color: #54ba4e;
+		color: #0d2e18;
+		&:hover {
+			background: darken(#54ba4e, 8%);
+			border-color: darken(#54ba4e, 8%);
+			color: #0d2e18;
+		}
+	}
+
+	a.btn-cta-secondary, .btn-cta-secondary {
+		background: #479fc8;
+		border-color: #479fc8;
+		color: #071522;
+		&:hover {
+			background: darken(#479fc8, 8%);
+			border-color: darken(#479fc8, 8%);
+			color: #071522;
+		}
 	}
 	
    .dark-mode-switch {
