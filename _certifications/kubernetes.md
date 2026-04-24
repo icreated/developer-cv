@@ -9,6 +9,7 @@ badgeUrl: /assets/images/badges/ckad-certified-kubernetes-application-developer.
 certificationUrl: https://www.credly.com/badges/903f45bd-1cb5-4a2f-bbd2-67142a43c09c/public_url
 layout: post
 order: 20
+expired: true
 ---
 
 <p align="center">

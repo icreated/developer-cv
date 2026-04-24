@@ -6,14 +6,20 @@
             {{ certif | markdownify }}
             {% assign certifications = site.certifications | where: 'status', 'published' | sort: 'order' %}
             {% for certification in certifications %}
-                <div class="item row">
-                    <a class="col-md-4 col-12" href="{{ certification.certificationUrl }}" target="_blank">
-                        <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" height="156px"/>
-                    </a>
+                <div class="item row{% if certification.expired %} certification-expired{% endif %}">
+                    <div class="col-md-4 col-12 position-relative">
+                        <a href="{{ certification.certificationUrl }}" target="_blank">
+                            <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" height="156px"/>
+                        </a>
+                        {% if certification.expired %}
+                        <span class="badge-expired">😔 Expiré</span>
+                        {% endif %}
+                    </div>
                     <div class="desc col-md-8 col-12">
-                        <h3 class="title"><a href="{{ certification.certificationUrl }}" target="_blank">
-                            {{ certification.title }}
-                        </a></h3>
+                        <h3 class="title">
+                            <a href="{{ certification.certificationUrl }}" target="_blank">{{ certification.title }}</a>
+                            {% if certification.expired %}<span class="tag-expired ms-2">Expiré</span>{% endif %}
+                        </h3>
 
                         <p class="mb-2">
                             {{ certification.description | markdownify }}

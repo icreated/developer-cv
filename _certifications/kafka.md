@@ -9,5 +9,6 @@ badgeUrl: /assets/images/badges/kafka.png
 certificationUrl: https://www.credential.net/ab5b4173-91cf-4457-bae5-670a94caa89c#gs.2c74m3
 layout: post
 order: 15
+expired: true
 sitemap: false
 ---
