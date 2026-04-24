@@ -10,21 +10,25 @@
     <meta name="author" content="{{ site.author }}">
     <link rel="shortcut icon" href="{{ 'favicon.ico?v=' | append: site.github.build_revision | relative_url }}">  
     
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
-    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- FontAwesome JS -->
     <script defer src="{{ 'assets/fontawesome/js/all.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    <!-- github calendar css -->
-    <link rel="stylesheet" href="{{ 'assets/plugins/github-calendar/dist/github-calendar-responsive.css?v=' | append: site.github.build_revision | relative_url }}">
-
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ 'assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link id="custom-style" rel="stylesheet" href="{{ 'assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    <!-- Non-critical CSS loaded async (below-fold content) -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/github-calendar/dist/github-calendar-responsive.css?v=' | append: site.github.build_revision | relative_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ 'assets/plugins/github-calendar/dist/github-calendar-responsive.css?v=' | append: site.github.build_revision | relative_url }}"></noscript>
+    <link id="custom-style" rel="stylesheet" href="{{ 'assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}" media="print" onload="this.media='all'">
+    <noscript><link id="custom-style" rel="stylesheet" href="{{ 'assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}"></noscript>
     {% seo %}
     {% include head-custom-google-analytics.html %}
     </head>
