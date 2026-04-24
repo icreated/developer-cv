@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lato', arial, sans-serif;   
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;   
     color: $text-color;
     background: $background;
     font-size: 16px;
@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6  {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     font-weight: 700;
     color: $color;
 }
@@ -28,7 +28,7 @@ a {
 
 .btn, a.btn {
     @include transition (all 0.4s ease-in-out);
-    font-family: 'Montserrat', arial, sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Arial, sans-serif;
     padding: 8px 16px;
     font-weight:bold;
     .svg-inline--fa {
@@ -238,7 +238,7 @@ a.dotted-link {
             overflow: hidden;
 
             .text {
-                font-family: 'Montserrat', sans-serif;
+                font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
                 position: relative;
                 left: -8px;
                 top: 18px;
