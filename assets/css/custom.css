@@ -40,28 +40,48 @@ h1.tag {
     filter: grayscale(40%);
 }
 
-.badge-expired {
+.ribbon-expired {
     position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.65);
-    color: #ccc;
-    font-size: .75em;
-    padding: .25em .6em;
-    border-radius: 4px;
-    white-space: nowrap;
+    top: -4px;
+    right: -4px;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
     pointer-events: none;
+}
+
+.ribbon-expired-text {
+    position: relative;
+    left: -6px;
+    top: 16px;
+    width: 126px;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    transform: rotate(45deg);
+    background-color: #6c757d;
+    color: #fff;
+}
+
+body[data-theme="dark"] .ribbon-expired-text {
+    background-color: #3a4150;
+    color: #cbd5e0;
 }
 
 .tag-expired {
     font-size: .65em;
     font-weight: 500;
     color: #888;
-    border: 1px solid #555;
+    border: 1px solid #aaa;
     border-radius: 4px;
     padding: .1em .4em;
     vertical-align: middle;
+}
+
+body[data-theme="dark"] .tag-expired {
+    color: #8b949e;
+    border-color: #555;
 }
 
 /* GitHub contribution calendar — official colour palette */

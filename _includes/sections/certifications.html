@@ -7,13 +7,17 @@
             {% assign certifications = site.certifications | where: 'status', 'published' | sort: 'order' %}
             {% for certification in certifications %}
                 <div class="item row{% if certification.expired %} certification-expired{% endif %}">
-                    <div class="col-md-4 col-12 position-relative">
-                        <a href="{{ certification.certificationUrl }}" target="_blank">
-                            <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" height="156px"/>
-                        </a>
-                        {% if certification.expired %}
-                        <span class="badge-expired">😔 Expiré</span>
-                        {% endif %}
+                    <div class="col-md-4 col-12">
+                        <div class="position-relative d-inline-block">
+                            <a href="{{ certification.certificationUrl }}" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" height="156px"/>
+                            </a>
+                            {% if certification.expired %}
+                            <div class="ribbon-expired">
+                                <div class="ribbon-expired-text">😔 Expiré</div>
+                            </div>
+                            {% endif %}
+                        </div>
                     </div>
                     <div class="desc col-md-8 col-12">
                         <h3 class="title">
