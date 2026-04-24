@@ -1,26 +1,24 @@
 {% include header.html %}
 
-  <div>
-    <section id="main_content">
-      <div class="container sections-wrapper py-5">
-        <div class="row">
-          <div class="primary col-lg-8 col-12">
-            {{ content }}
+  <main id="main_content">
+    <div class="container sections-wrapper py-5">
+      <div class="row">
+        <div class="primary col-lg-8 col-12">
+          {{ content }}
 
-            {% if page.url == "/" %}
-              <section class="github section">
-                <div class="section-inner shadow-sm rounded">
-                    <h2 class="heading">Mon activité sur GitHub</h2>
-                    <div id="github-graph" class="github-graph"></div>
-                </div>
-              </section>
-            {% endif %}
-          </div>
-          <div class="secondary col-lg-4 col-12">
-            {% include side-panel.html %}
-          </div>
-      </div><!--//row-->
-    </div><!--//masonry-->
-    </section>
-  </div>
+          {% if page.url == "/" %}
+            <section class="github section">
+              <div class="section-inner shadow-sm rounded">
+                  <h2 class="heading">Mon activité sur GitHub</h2>
+                  <div id="github-graph" class="github-graph"></div>
+              </div>
+            </section>
+          {% endif %}
+        </div>
+        <div class="secondary col-lg-4 col-12">
+          {% include side-panel.html %}
+        </div>
+      </div>
+    </div>
+  </main>
 {% include footer.html %}

@@ -29,7 +29,7 @@
                             {{ project.description }}
                         </div>
                         {% if project.content.size > 1 %}
-                        <a class="btn btn-cta-secondary" href="{{ site.url | append: project.url }}"><i class="fas fa-thumbs-up"></i>En savoir plus</a>
+                        <a class="btn btn-cta-secondary" href="{{ site.url | append: project.url }}" aria-label="En savoir plus sur {{ project.title }}"><i class="fas fa-thumbs-up" aria-hidden="true"></i>En savoir plus</a>
                         {% endif %}
                     </div>
                     <hr class="divider" />
@@ -59,7 +59,7 @@
                             </h3>
                             <p class="mb-2">{{ project.description }}</p>
                             {% if project.content.size > 1 %}
-                            <p><a class="more-link" href="{{ site.url | append: project.url }}"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
+                            <p><a class="more-link" href="{{ site.url | append: project.url }}" aria-label="En savoir plus sur {{ project.title }}"><i class="fas fa-external-link-alt" aria-hidden="true"></i>En savoir plus</a></p>
                             {% endif %}
                         </div>
                     </div>

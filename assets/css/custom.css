@@ -9,13 +9,14 @@
     border-radius: 5px;
     padding: .2em .5em .3em;
     background: #66CB8C;
-    color: #f7f7f7;
+    color: #0d2e18;
     font-weight: 600;
     margin: .25em .1em
 }
 
 body[data-theme="dark"] .tag {
     background: #3AAA64;
+    color: #0d2e18;
   }
 
 h1.tag {
@@ -72,8 +73,8 @@ body[data-theme="dark"] .ribbon-expired-text {
 .tag-expired {
     font-size: .65em;
     font-weight: 500;
-    color: #888;
-    border: 1px solid #aaa;
+    color: #595959;
+    border: 1px solid #888;
     border-radius: 4px;
     padding: .1em .4em;
     vertical-align: middle;

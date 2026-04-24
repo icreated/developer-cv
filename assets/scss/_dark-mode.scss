@@ -27,9 +27,13 @@
 
 
 body[data-theme="dark"] {
-	
+
 	background: $dm-background;
-	
+
+	a {
+		color: $color-2;
+	}
+
 	a:hover {
         color: lighten($color-2, 10%);
 	}

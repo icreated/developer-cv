@@ -30,8 +30,8 @@
                         </p>
 
                         {% if certification.content.size > 1 %}
-                        <p><a class="more-link" href="{{ site.url | append: certification.url }}">
-                            <i class="fas fa-external-link-alt"></i>
+                        <p><a class="more-link" href="{{ site.url | append: certification.url }}" aria-label="En savoir plus sur {{ certification.title }}">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                             En savoir plus
                             </a>
                         </p>
