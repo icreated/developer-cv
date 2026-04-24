@@ -9,8 +9,8 @@
                 {% for music in favorite_music %}
                     <li class="item m-2">
                         {% if music.isYoutube %}
-                            <i class="fab fa-youtube"></i>
-                            <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}" target="_blank" rel="noopener noreferrer">{{ music.title }}</a>
                         {% else %}
                         <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
                         <audio controls>

@@ -9,7 +9,7 @@
                 <div class="item row{% if certification.expired %} certification-expired{% endif %}">
                     <div class="col-md-4 col-12">
                         <div class="position-relative d-inline-block">
-                            <a href="{{ certification.certificationUrl }}" target="_blank">
+                            <a href="{{ certification.certificationUrl }}" target="_blank" rel="noopener noreferrer">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" height="156px"/>
                             </a>
                             {% if certification.expired %}
@@ -21,7 +21,7 @@
                     </div>
                     <div class="desc col-md-8 col-12">
                         <h3 class="title">
-                            <a href="{{ certification.certificationUrl }}" target="_blank">{{ certification.title }}</a>
+                            <a href="{{ certification.certificationUrl }}" target="_blank" rel="noopener noreferrer">{{ certification.title }}</a>
                             {% if certification.expired %}<span class="tag-expired ms-2">Expiré</span>{% endif %}
                         </h3>
 

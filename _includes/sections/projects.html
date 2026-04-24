@@ -8,7 +8,7 @@
                     <div class="item featured text-center">
                         <div class="featured-image has-ribbon">
                             {% if project.link %}
-                            <a href="{{ project.link }}" target="_blank">
+                            <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
                             </a>
                             {% else %}
@@ -20,7 +20,7 @@
                         </div>
                         <h3 class="title mb-3">
                             {% if project.link %}
-                                <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                                <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">{{ project.title }}</a>
                             {% else %}
                                 {{ project.title }}
                             {% endif %}
@@ -41,7 +41,7 @@
                 {% for project in projects %}
                     <div class="item row">
                         {% if project.link %}
-                            <a class="col-md-4 col-12" href="{{ project.link }}" target="_blank">
+                            <a class="col-md-4 col-12" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
                                 <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
                             </a>
                         {% else %}
@@ -52,7 +52,7 @@
                         <div class="desc col-md-8 col-12">
                             <h3 class="title">
                                 {% if project.link %}
-                                    <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                                    <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">{{ project.title }}</a>
                                 {% else %}
                                     {{ project.title }}
                                 {% endif %}

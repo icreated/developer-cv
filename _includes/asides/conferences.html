@@ -6,7 +6,7 @@
         <div class="content">
             <ul class="list-unstyled">
                 {% for conference in conferences %}
-                    <li><i class="far fa-calendar-alt"></i> <a href="{{ conference.link }}" target="_blank">{{ conference.title }}</a> ({{ conference.location }})</li>
+                    <li><i class="far fa-calendar-alt" aria-hidden="true"></i> <a href="{{ conference.link }}" target="_blank" rel="noopener noreferrer">{{ conference.title }}</a> ({{ conference.location }})</li>
                 {% endfor %}
             </ul>
         </div>

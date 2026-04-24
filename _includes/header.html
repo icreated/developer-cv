@@ -2,13 +2,12 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
 
 <head>
-    <title>{{ site.title }}</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
-    <meta name="author" content="{{ site.author }}">    
+    <meta name="author" content="{{ site.author }}">
     <link rel="shortcut icon" href="{{ 'favicon.ico?v=' | append: site.github.build_revision | relative_url }}">  
     
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -36,49 +35,49 @@
         <div class="container">     
 	        <div class="row align-items-center">
 			    <div class="col">
-                    <a href="{{ '/' | absolute_url }}">
-                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}" alt="profile image" />
-                    </a>      
+                    <a href="{{ '/' | absolute_url }}" aria-label="Accueil">
+                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}" alt="Photo de profil de Sergey Polyarus" />
+                    </a>
 		            <div class="profile-content">
 		                <h1 class="name"><span class="integral">∫</span>created</h1>
 		                <h2 class="desc">{{ site.header.description }}</h2>   
 		                <ul class="social list-inline">
                             {% if site.social.github %}
                             <li class="list-inline-item">
-                                <a title="{{ site.social.github }} on Github"
+                                <a aria-label="{{ site.social.github }} sur Github"
                                     href="https://github.com/{{ site.social.github }}"
-                                    target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
                             </li>
                             {% endif %}
-                        
+
                             {% if site.social.linkedin %}
                             <li class="list-inline-item">
-                                <a title="{{ site.social.linkedin }} on LinkedIn"
+                                <a aria-label="{{ site.social.linkedin }} sur LinkedIn"
                                     href="https://www.linkedin.com/in/{{ site.social.linkedin }}/"
-                                    target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
                             </li>
                             {% endif %}
-                        
+
                             {% if site.social.stackoverflow %}
                             <li class="list-inline-item">
-                                <a title="{{ site.social.stackoverflow }} on StackOverflow"
+                                <a aria-label="{{ site.social.stackoverflow }} sur StackOverflow"
                                     href="http://stackoverflow.com/users/2695723/{{ site.social.stackoverflow }}"
-                                    target="_blank"><i class="fab fa-stack-overflow fa-2x"></i></a>
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-stack-overflow fa-2x" aria-hidden="true"></i></a>
                             </li>
                             {% endif %}
-                        
+
                             {% if site.social.credly %}
                             <li class="list-inline-item">
-                                <a title="{{ site.social.credly }} on Credly"
+                                <a aria-label="{{ site.social.credly }} sur Credly"
                                     href="https://credly.com/users/{{ site.social.credly }}"
-                                    target="_blank"><i class="fa fa-id-badge fa-2x"></i></a>
+                                    target="_blank" rel="noopener noreferrer"><i class="fa fa-id-badge fa-2x" aria-hidden="true"></i></a>
                             </li>
                             {% endif %}
                             {% if site.social.youtube %}
                             <li class="list-inline-item">
-                                <a title="{{ site.social.youtube }} on YouTube"
+                                <a aria-label="{{ site.social.youtube }} sur YouTube"
                                     href="https://www.youtube.com/@{{ site.social.youtube }}"
-                                    target="_blank"><i class="fab fa-youtube fa-2x"></i></a>    
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fa-2x" aria-hidden="true"></i></a>
                             </li>
                             {% endif %}                                                                   
 		                </ul> 
