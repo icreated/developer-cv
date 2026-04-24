@@ -1,0 +1,71 @@
+<section class="latest section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading" id="Projet">Mes Projects</h2>
+        <div class="content">
+            {% assign featured_projects = site.projects | where: 'status', 'featured' %}
+            {% if featured_projects.size > 0 %}
+                {% for project in featured_projects %}
+                    <div class="item featured text-center">
+                        <div class="featured-image has-ribbon">
+                            {% if project.link %}
+                            <a href="{{ project.link }}" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                            </a>
+                            {% else %}
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                            {% endif %}
+                            <div class="ribbon">
+                                <div class="text">Nouveau</div>
+                            </div>
+                        </div>
+                        <h3 class="title mb-3">
+                            {% if project.link %}
+                                <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                            {% else %}
+                                {{ project.title }}
+                            {% endif %}
+                        </h3>
+                        <div class="desc text-start">
+                            {{ project.description }}
+                        </div>
+                        {% if project.content.size > 1 %}
+                        <a class="btn btn-cta-secondary" href="{{ site.url | append: project.url }}"><i class="fas fa-thumbs-up"></i>En savoir plus</a>
+                        {% endif %}
+                    </div>
+                    <hr class="divider" />
+                {% endfor %}
+            {% endif %}
+
+            {% assign projects = site.projects | where: 'status', 'published' %}
+            {% if projects.size > 0 %}
+                {% for project in projects %}
+                    <div class="item row">
+                        {% if project.link %}
+                            <a class="col-md-4 col-12" href="{{ project.link }}" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                            </a>
+                        {% else %}
+                            <div class="col-md-4 col-12">
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" />
+                            </div>
+                        {% endif %}
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title">
+                                {% if project.link %}
+                                    <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                                {% else %}
+                                    {{ project.title }}
+                                {% endif %}
+                            </h3>
+                            <p class="mb-2">{{ project.description }}</p>
+                            {% if project.content.size > 1 %}
+                            <p><a class="more-link" href="{{ site.url | append: project.url }}"><i class="fas fa-external-link-alt"></i>En savoir plus</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        </div>
+    </div>
+</section>

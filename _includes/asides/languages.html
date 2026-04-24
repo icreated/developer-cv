@@ -1,0 +1,22 @@
+<aside class="languages aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Languages</h2>
+        <div class="content">
+            {% capture languages %}{% include languages.md %}{% endcapture %}
+            {{ languages | markdownify }}
+            <ul class="list-unstyled">
+                {% assign languages = site.languages | where: 'status', 'published' %}
+                {% for language in languages %}
+                    <li class="item">
+                        <span class="title"><strong>{{ language.title }}:</strong></span>
+                        <span class="level">{{ language.level }}<br class="visible-xs"/>
+                            {% for rate in (1..language.rate) %}
+                                <i class="fas fa-star"></i>
+                            {% endfor %}
+                        </span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</aside>

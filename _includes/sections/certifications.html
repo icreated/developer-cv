@@ -1,0 +1,37 @@
+<section class="projects section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading" id="Certification">Certifications</h2>
+        <div class="content">
+            {% capture certif %}{% include certifications.md %}{% endcapture %}
+            {{ certif | markdownify }}
+            {% assign certifications = site.certifications | where: 'status', 'published' | sort: 'order' %}
+            {% for certification in certifications %}
+                <div class="item row">
+                    <a class="col-md-4 col-12" href="{{ certification.certificationUrl }}" target="_blank">
+                        <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" height="156px"/>
+                    </a>
+                    <div class="desc col-md-8 col-12">
+                        <h3 class="title"><a href="{{ certification.certificationUrl }}" target="_blank">
+                            {{ certification.title }}
+                        </a></h3>
+
+                        <p class="mb-2">
+                            {{ certification.description | markdownify }}
+                        </p>
+
+                        {% if certification.content.size > 1 %}
+                        <p><a class="more-link" href="{{ site.url | append: certification.url }}">
+                            <i class="fas fa-external-link-alt"></i>
+                            En savoir plus
+                            </a>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <a class="btn btn-cta-secondary" href="{{ site.icreated.links.credly.url }}">En savoir plus sur {{ site.icreated.links.credly.title }} <i class="fas fa-chevron-right pt-1"></i></a>
+
+        </div>
+    </div>
+</section>

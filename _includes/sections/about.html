@@ -1,0 +1,11 @@
+<section class="about section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">A propos de moi</h2>
+        <div class="content">
+            <p>
+                {% capture about_me %}{% include about-me.md %}{% endcapture %}
+                {{ about_me | markdownify }}
+            </p>
+        </div>
+    </div>
+</section>

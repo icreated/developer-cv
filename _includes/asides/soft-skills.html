@@ -1,0 +1,22 @@
+<aside class="skills aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Savoir-être</h2>
+        <div class="content">
+            <p class="intro">
+                {% capture soft_skills %}{% include soft_skills.md %}{% endcapture %}
+                {{ soft_skills | markdownify }}
+            </p>
+            <div class="skillset">
+                {% assign skills = site.soft_skills | where: 'status', 'published' | sort: 'order' %}
+                {% for skill in skills %}
+                <div class="item">
+                    <h3 class="level-title" id="soft_{{ skill.name }}">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle"></i>{{ skill.level }}</span></h3>
+                    <div class="level-bar progress">
+                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percentage }}%" aria-label="Niveau {{ skill.percentage }} percent" aria-labelledby="soft_{{ skill.name }}" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</aside>

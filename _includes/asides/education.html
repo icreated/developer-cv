@@ -1,0 +1,17 @@
+<aside class="education aside section">
+    <div class="section-inner shadow-sm rounded">
+        <h2 class="heading">Education</h2>
+        <div class="content">
+            {% capture education %}{% include education.md %}{% endcapture %}
+            {{ education | markdownify }}
+
+            {% assign schools = site.schools | where: 'status', 'published' %}
+            {% for school in schools %}
+            <div class="item">
+                <h3 class="title"><i class="fas fa-graduation-cap"></i> {{ school.graduation }}</h3>
+                <h4 class="university">{{ school.title }} <span class="year">({{ school.years }})</span></h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</aside>
