@@ -124,6 +124,7 @@ table.ContributionCalendar-grid {
     width: 100% !important;
     border-collapse: separate !important;
     border-spacing: 3px !important;
+    pointer-events: none;
 }
 table.ContributionCalendar-grid td {
     padding: 0 !important;
