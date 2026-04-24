@@ -16,8 +16,8 @@
     <!-- Trusted Types Policies (progressive enhancement, no CSP enforcement) -->
     <script defer src="{{ 'assets/js/trusted-types-policies.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     
-    <!-- FontAwesome JS -->
-    <script defer src="{{ 'assets/fontawesome/js/all.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <!-- FontAwesome JS (must not be deferred to process icons early) -->
+    <script src="{{ 'assets/fontawesome/js/all.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}">
