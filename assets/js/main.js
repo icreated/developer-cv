@@ -18,7 +18,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
                 return fetch(
                     `https://api.bloggify.net/gh-calendar/?username=${username}`,
                     { credentials: "omit" }
-                );
+                ).then(r => r.text());
             }
         });
     }
