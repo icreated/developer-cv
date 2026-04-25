@@ -24,7 +24,7 @@
     <script defer src="{{ 'assets/plugins/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
     <!-- Plugins -->
     <script defer src="{{ 'assets/plugins/dark-mode-switch/dark-mode-switch.min.js' | relative_url }}"></script>
-    <script defer src="{{ 'assets/plugins/github-calendar/dist/github-calendar.min.js' | relative_url }}"></script>
+    <script defer src="{{ 'assets/plugins/github-calendar/dist/github-calendar.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <!-- App scripts -->
     <script defer src="{{ 'assets/js/framebusting.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ 'assets/js/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
