@@ -111,7 +111,8 @@ module.exports = function GitHubCalendar (container, username, options) {
         let div = document.createElement("div")
         div.innerHTML = body
         let cal = div.querySelector(".js-yearly-contributions")
-        $(".position-relative h2", cal).remove()
+        const h2 = $(".position-relative h2", cal)
+        if (h2) { h2.remove() }
         //cal.querySelector(".float-left.text-gray").innerHTML = options.summary_text
 
         // Remove 3d visualiser div
