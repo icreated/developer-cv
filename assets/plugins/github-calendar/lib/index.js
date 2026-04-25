@@ -110,7 +110,7 @@ module.exports = function GitHubCalendar (container, username, options) {
     let fetchCalendar = () => options.getCalendar(username).then(body => {
         let div = document.createElement("div")
         div.innerHTML = body
-        let cal = div.querySelector(".js-yearly-contributions")
+        let cal = div.querySelector(".js-yearly-contributions") || div.querySelector(".ContributionCalendar") || div
         const h2 = $(".position-relative h2", cal)
         if (h2) { h2.remove() }
         //cal.querySelector(".float-left.text-gray").innerHTML = options.summary_text
