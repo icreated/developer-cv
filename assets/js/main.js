@@ -3,6 +3,19 @@
 document.querySelectorAll('[data-bs-toggle="tooltip"]')
     .forEach(el => new bootstrap.Tooltip(el));
 
+// Lazy-init helper: run fn() only when element enters the viewport
+function lazyInit(id, fn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const obs = new IntersectionObserver((entries, observer) => {
+        if (entries[0].isIntersecting) {
+            observer.disconnect();
+            fn();
+        }
+    }, { threshold: 0.1 });
+    obs.observe(el);
+}
+
 // GitHub Calendar — https://github.com/IonicaBizau/github-calendar
 if (document.getElementById("github-graph")) {
     // Drop stale cache entries (non-HTML values from earlier proxy bug)
@@ -11,14 +24,17 @@ if (document.getElementById("github-graph")) {
         localStorage.removeItem("gh_calendar_content.icreated");
         localStorage.removeItem("gh_calendar_expire.icreated");
     }
-    GitHubCalendar("#github-graph", "icreated", {
-        responsive: true,
-        global_stats: false,
-        proxy: username => fetch(
-            `https://api.bloggify.net/gh-calendar/?username=${username}`,
-            { credentials: "omit" }
-        ).then(r => r.text())
-    }).catch(() => {});
+    // Defer calendar fetch until section is visible
+    lazyInit("github-graph", () => {
+        GitHubCalendar("#github-graph", "icreated", {
+            responsive: true,
+            global_stats: false,
+            proxy: username => fetch(
+                `https://api.bloggify.net/gh-calendar/?username=${username}`,
+                { credentials: "omit" }
+            ).then(r => r.text())
+        }).catch(() => {});
+    });
 }
 
 function goBack() {
@@ -96,7 +112,7 @@ function initSkillsHumorAnimation() {
     startAnimation();
 }
 
-initSkillsHumorAnimation();
+lazyInit("skillset", initSkillsHumorAnimation);
 
 function initSoftSkillsHumorAnimation() {
     const softSkillset = document.getElementById("soft-skillset");
@@ -163,5 +179,5 @@ function initSoftSkillsHumorAnimation() {
     startAnimation();
 }
 
-initSoftSkillsHumorAnimation();
+lazyInit("soft-skillset", initSoftSkillsHumorAnimation);
 //# sourceMappingURL=main.js.map
