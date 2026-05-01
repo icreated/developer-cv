@@ -36,4 +36,115 @@ function goBack() {
 		history.back()
 	}
 }
+
+function initSkillsHumorAnimation() {
+    const skillset = document.getElementById("skillset");
+    if (!skillset) {
+        return;
+    }
+
+    const bars = skillset.querySelectorAll(".level-bar-inner");
+    if (!bars.length) {
+        return;
+    }
+
+    // Store initial percentages
+    const initialValues = {};
+    let iaBar = null;
+    bars.forEach((bar) => {
+        const skillName = (bar.dataset.skill || "").trim();
+        const basePercentage = parseInt(bar.dataset.basePercentage || "0", 10);
+        initialValues[skillName] = basePercentage;
+        if (skillName.toUpperCase() === "IA") {
+            iaBar = bar;
+        }
+    });
+
+    function startAnimation() {
+        let aiLevel = 0;
+        const maxLevel = 100;
+
+        function animateSkillsForward() {
+            bars.forEach((bar) => {
+                const skillName = (bar.dataset.skill || "").trim();
+                const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
+                const basePercentage = initialValues[skillName] || 0;
+
+                if (skillName.toUpperCase() === "IA") {
+                    bar.style.width = `${aiLevel}%`;
+                    bar.setAttribute("aria-valuenow", String(aiLevel));
+                    if (label) {
+                        label.textContent = `${aiLevel}%`;
+                    }
+                    return;
+                }
+
+                // Proportional decrease: from basePercentage to 50% of basePercentage
+                const reduction = aiLevel / maxLevel;
+                const newWidth = basePercentage * (1 - 0.5 * reduction);
+
+                bar.style.width = `${newWidth}%`;
+                bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
+                if (label) {
+                    label.textContent = `${Math.round(newWidth)}%`;
+                }
+            });
+
+            aiLevel = Math.min(maxLevel, aiLevel + 2);
+            if (aiLevel < maxLevel) {
+                window.setTimeout(animateSkillsForward, 100);
+            } else {
+                // Hold for 3 seconds then animate back
+                window.setTimeout(animateSkillsBackward, 3000);
+            }
+        }
+
+        function animateSkillsBackward() {
+            let returnLevel = maxLevel;
+
+            function animateReturn() {
+                bars.forEach((bar) => {
+                    const skillName = (bar.dataset.skill || "").trim();
+                    const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
+                    const basePercentage = initialValues[skillName] || 0;
+
+                    if (skillName.toUpperCase() === "IA") {
+                        bar.style.width = `${returnLevel}%`;
+                        bar.setAttribute("aria-valuenow", String(returnLevel));
+                        if (label) {
+                            label.textContent = `${returnLevel}%`;
+                        }
+                        return;
+                    }
+
+                    // Proportional increase: from 50% of basePercentage back to basePercentage
+                    const reduction = returnLevel / maxLevel;
+                    const newWidth = basePercentage * (1 - 0.5 * reduction);
+
+                    bar.style.width = `${newWidth}%`;
+                    bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
+                    if (label) {
+                        label.textContent = `${Math.round(newWidth)}%`;
+                    }
+                });
+
+                returnLevel = Math.max(0, returnLevel - 2);
+                if (returnLevel > 0) {
+                    window.setTimeout(animateReturn, 100);
+                } else {
+                    // Restart animation after reset
+                    window.setTimeout(startAnimation, 500);
+                }
+            }
+
+            animateReturn();
+        }
+
+        animateSkillsForward();
+    }
+
+    startAnimation();
+}
+
+initSkillsHumorAnimation();
 //# sourceMappingURL=main.js.map

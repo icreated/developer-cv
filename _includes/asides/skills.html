@@ -6,13 +6,13 @@
                 {% capture skills %}{% include skills.md %}{% endcapture %}
                 {{ skills | markdownify }}
             </p>
-            <div class="skillset">
+            <div class="skillset" id="skillset">
                 {% assign skills = site.skills | where: 'status', 'published' %}
                 {% for skill in skills %}
                 <div class="item">
-                    <h3 class="level-title" id="skill_{{ skill.name }}">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle" aria-hidden="true"></i>{{ skill.level }}</span></h3>
+                    <h3 class="level-title" id="skill_{{ skill.name }}">{{ skill.name }}<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="{{ skill.title }}"><i class="fas fa-info-circle" aria-hidden="true"></i><span class="skill-level">{{ skill.level }}</span></span></h3>
                     <div class="level-bar progress">
-                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percentage }}%" aria-label="Niveau {{ skill.percentage }} percent" aria-labelledby="skill_{{ skill.name }}" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar level-bar-inner" role="progressbar" style="width: {{ skill.percentage }}%" aria-label="Niveau {{ skill.percentage }} percent" aria-labelledby="skill_{{ skill.name }}" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100" data-skill="{{ skill.name }}" data-base-percentage="{{ skill.percentage }}"></div>
                     </div>
                 </div>
                 {% endfor %}
@@ -22,3 +22,9 @@
         </div>
     </div>
 </aside>
+
+<style>
+.level-bar-inner {
+    transition: width 0.2s ease-in-out;
+}
+</style>
