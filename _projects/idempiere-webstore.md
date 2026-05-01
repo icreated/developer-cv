@@ -8,12 +8,14 @@ status: featured
 layout: post
 link: https://webstore.icreated.co
 imageUrl: /assets/images/projects/idempiere-webstore.avif
+imageSrcset: /assets/images/projects/idempiere-webstore-360.avif 360w, /assets/images/projects/idempiere-webstore-600.avif 600w, /assets/images/projects/idempiere-webstore-1024.avif 1024w
+imageSizes: "(max-width: 767px) 100vw, 1024px"
 imageWidth: 1024
 imageHeight: 542
 ---
 
 <p align="center">
-<img src="{{ page.imageUrl }}" alt="{{ page.title }}" width="{{ page.imageWidth }}" height="{{ page.imageHeight }}" />
+<img src="{{ page.imageUrl }}" srcset="{{ page.imageSrcset }}" sizes="{{ page.imageSizes }}" alt="{{ page.title }}" width="{{ page.imageWidth }}" height="{{ page.imageHeight }}" />
 </p>
 
 # WebStore Frontend
