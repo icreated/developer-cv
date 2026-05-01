@@ -7,6 +7,9 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # HTML pages — always revalidate
 /*
   Cache-Control: public, max-age=0, must-revalidate
