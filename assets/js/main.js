@@ -31,102 +31,66 @@ function goBack() {
 
 function initSkillsHumorAnimation() {
     const skillset = document.getElementById("skillset");
-    if (!skillset) {
-        return;
-    }
+    if (!skillset) return;
 
     const bars = skillset.querySelectorAll(".level-bar-inner");
-    if (!bars.length) {
-        return;
-    }
+    if (!bars.length) return;
 
-    // Store initial percentages
     const initialValues = {};
     bars.forEach((bar) => {
         const skillName = (bar.dataset.skill || "").trim();
-        const basePercentage = parseInt(bar.dataset.basePercentage || "0", 10);
-        initialValues[skillName] = basePercentage;
+        initialValues[skillName] = parseInt(bar.dataset.basePercentage || "0", 10);
     });
 
-    function startAnimation() {
-        let aiLevel = 0;
-        const maxLevel = 100;
+    // Cache label references once — avoids repeated querySelector per frame
+    const labelMap = new Map();
+    bars.forEach((bar) => {
+        labelMap.set(bar, bar.parentElement?.parentElement?.querySelector(".skill-level") || null);
+    });
 
-        function animateSkillsForward() {
+    function applyFrame(level) {
+        // Batch all DOM writes in one rAF to avoid forced reflow
+        requestAnimationFrame(() => {
             bars.forEach((bar) => {
                 const skillName = (bar.dataset.skill || "").trim();
-                const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
-                const basePercentage = initialValues[skillName] || 0;
-
-                if (skillName.toUpperCase() === "IA") {
-                    bar.style.width = `${aiLevel}%`;
-                    bar.setAttribute("aria-valuenow", String(aiLevel));
-                    if (label) {
-                        label.textContent = `${aiLevel}%`;
-                    }
-                    return;
-                }
-
-                // Proportional decrease: from basePercentage to 50% of basePercentage
-                const reduction = aiLevel / maxLevel;
-                const newWidth = basePercentage * (1 - 0.5 * reduction);
-
-                bar.style.width = `${newWidth}%`;
-                bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
-                if (label) {
-                    label.textContent = `${Math.round(newWidth)}%`;
-                }
+                const label = labelMap.get(bar);
+                const base = initialValues[skillName] || 0;
+                const isIA = skillName.toUpperCase() === "IA";
+                const w = isIA ? level : base * (1 - 0.5 * (level / 100));
+                const rounded = Math.round(w);
+                bar.style.width = `${w}%`;
+                bar.setAttribute("aria-valuenow", String(rounded));
+                if (label) label.textContent = `${rounded}%`;
             });
+        });
+    }
 
-            aiLevel = Math.min(maxLevel, aiLevel + 2);
-            if (aiLevel < maxLevel) {
-                setTimeout(animateSkillsForward, 100);
-            } else {
-                setTimeout(animateSkillsBackward, 3000);
+    function startAnimation() {
+        let level = 0;
+        let lastTime = 0;
+        const STEP_MS = 50; // 20 fps — smooth enough, 5× fewer reflows than 100ms
+
+        function forward(ts) {
+            if (ts - lastTime >= STEP_MS) {
+                lastTime = ts;
+                applyFrame(level);
+                level = Math.min(100, level + 2);
             }
+            if (level < 100) requestAnimationFrame(forward);
+            else setTimeout(() => requestAnimationFrame(backward), 3000);
         }
 
-        function animateSkillsBackward() {
-            let returnLevel = maxLevel;
-
-            function animateReturn() {
-                bars.forEach((bar) => {
-                    const skillName = (bar.dataset.skill || "").trim();
-                    const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
-                    const basePercentage = initialValues[skillName] || 0;
-
-                    if (skillName.toUpperCase() === "IA") {
-                        bar.style.width = `${returnLevel}%`;
-                        bar.setAttribute("aria-valuenow", String(returnLevel));
-                        if (label) {
-                            label.textContent = `${returnLevel}%`;
-                        }
-                        return;
-                    }
-
-                    // Proportional increase: from 50% of basePercentage back to basePercentage
-                    const reduction = returnLevel / maxLevel;
-                    const newWidth = basePercentage * (1 - 0.5 * reduction);
-
-                    bar.style.width = `${newWidth}%`;
-                    bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
-                    if (label) {
-                        label.textContent = `${Math.round(newWidth)}%`;
-                    }
-                });
-
-                returnLevel = Math.max(0, returnLevel - 2);
-                if (returnLevel > 0) {
-                    setTimeout(animateReturn, 100);
-                } else {
-                    setTimeout(startAnimation, 500);
-                }
+        function backward(ts) {
+            if (ts - lastTime >= STEP_MS) {
+                lastTime = ts;
+                applyFrame(level);
+                level = Math.max(0, level - 2);
             }
-
-            animateReturn();
+            if (level > 0) requestAnimationFrame(backward);
+            else setTimeout(startAnimation, 500);
         }
 
-        animateSkillsForward();
+        requestAnimationFrame(forward);
     }
 
     startAnimation();
@@ -136,102 +100,64 @@ initSkillsHumorAnimation();
 
 function initSoftSkillsHumorAnimation() {
     const softSkillset = document.getElementById("soft-skillset");
-    if (!softSkillset) {
-        return;
-    }
+    if (!softSkillset) return;
 
     const bars = softSkillset.querySelectorAll(".level-bar-inner");
-    if (!bars.length) {
-        return;
-    }
+    if (!bars.length) return;
 
-    // Store initial percentages
     const initialValues = {};
     bars.forEach((bar) => {
         const skillName = (bar.dataset.skill || "").trim();
-        const basePercentage = parseInt(bar.dataset.basePercentage || "0", 10);
-        initialValues[skillName] = basePercentage;
+        initialValues[skillName] = parseInt(bar.dataset.basePercentage || "0", 10);
     });
 
-    function startAnimation() {
-        let iaLevel = 0;
-        const maxLevel = 100;
+    const labelMap = new Map();
+    bars.forEach((bar) => {
+        labelMap.set(bar, bar.parentElement?.parentElement?.querySelector(".skill-level") || null);
+    });
 
-        function animateSoftSkillsForward() {
+    function applyFrame(level) {
+        requestAnimationFrame(() => {
             bars.forEach((bar) => {
                 const skillName = (bar.dataset.skill || "").trim();
-                const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
-                const basePercentage = initialValues[skillName] || 0;
-
-                if (skillName.toUpperCase() === "IA") {
-                    bar.style.width = `${iaLevel}%`;
-                    bar.setAttribute("aria-valuenow", String(iaLevel));
-                    if (label) {
-                        label.textContent = `${iaLevel}%`;
-                    }
-                    return;
-                }
-
-                // Random oscillation: ±5% around base percentage
-                const randomVariation = (Math.random() - 0.5) * 10; // -5 to +5
-                const newWidth = basePercentage + randomVariation;
-
-                bar.style.width = `${newWidth}%`;
-                bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
-                if (label) {
-                    label.textContent = `${Math.round(newWidth)}%`;
-                }
+                const label = labelMap.get(bar);
+                const base = initialValues[skillName] || 0;
+                const isIA = skillName.toUpperCase() === "IA";
+                const w = isIA ? level : base + (Math.random() - 0.5) * 10;
+                const rounded = Math.round(w);
+                bar.style.width = `${w}%`;
+                bar.setAttribute("aria-valuenow", String(rounded));
+                if (label) label.textContent = `${rounded}%`;
             });
+        });
+    }
 
-            iaLevel = Math.min(maxLevel, iaLevel + 2);
-            if (iaLevel < maxLevel) {
-                setTimeout(animateSoftSkillsForward, 100);
-            } else {
-                setTimeout(animateSoftSkillsBackward, 3000);
+    function startAnimation() {
+        let level = 0;
+        let lastTime = 0;
+        const STEP_MS = 50;
+
+        function forward(ts) {
+            if (ts - lastTime >= STEP_MS) {
+                lastTime = ts;
+                applyFrame(level);
+                level = Math.min(100, level + 2);
             }
+            if (level < 100) requestAnimationFrame(forward);
+            else setTimeout(() => requestAnimationFrame(backward), 3000);
         }
 
-        function animateSoftSkillsBackward() {
-            let returnLevel = maxLevel;
-
-            function animateReturn() {
-                bars.forEach((bar) => {
-                    const skillName = (bar.dataset.skill || "").trim();
-                    const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
-                    const basePercentage = initialValues[skillName] || 0;
-
-                    if (skillName.toUpperCase() === "IA") {
-                        bar.style.width = `${returnLevel}%`;
-                        bar.setAttribute("aria-valuenow", String(returnLevel));
-                        if (label) {
-                            label.textContent = `${returnLevel}%`;
-                        }
-                        return;
-                    }
-
-                    // Random oscillation: ±5% around base percentage
-                    const randomVariation = (Math.random() - 0.5) * 10; // -5 to +5
-                    const newWidth = basePercentage + randomVariation;
-
-                    bar.style.width = `${newWidth}%`;
-                    bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
-                    if (label) {
-                        label.textContent = `${Math.round(newWidth)}%`;
-                    }
-                });
-
-                returnLevel = Math.max(0, returnLevel - 2);
-                if (returnLevel > 0) {
-                    setTimeout(animateReturn, 100);
-                } else {
-                    setTimeout(startAnimation, 500);
-                }
+        function backward(ts) {
+            if (ts - lastTime >= STEP_MS) {
+                lastTime = ts;
+                applyFrame(level);
+                level = Math.max(0, level - 2);
             }
-
-            animateReturn();
+            if (level > 0) requestAnimationFrame(backward);
+            else setTimeout(startAnimation, 500);
         }
 
-        animateSoftSkillsForward();
+        requestAnimationFrame(forward);
     }
 
     startAnimation();
