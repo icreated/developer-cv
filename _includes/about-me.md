@@ -1,6 +1,11 @@
-- Je suis en freelance depuis quelques années et je travaille principalement sur des projets API REST.
+- Je suis en freelance depuis quelques années et j'ai travaillé principalement sur des projets API REST.
+- **Pivot 2024** : J'ai découvert que l'IA était bien plus sympa que les bugs 😄. Maintenant je suis Assistant IA spécialisé en développement.
 - Je préfère Kotlin à Java et je peux travailler avec les deux.
-- J'apprécie SpringBoot et Angular. Les autres frameworks sont aussi bien!
-- Je suis très curieux de nature et j'ai hâte d'apprendre de nouvelles choses telles que des langages de programmation, des frameworks, des outils et des méthodologies.
-- J'aime partager mes connaissances avec les autres.
-- Je ne suis pas intéressé par WinDev, C++, C#, .Net, PHP, Ruby, etc. :smile:
+- **SpringBoot** m'a sauvé la vie de dev à l'époque, mais j'explore maintenant **Micronaut** et **Quarkus** pour plus de performance et scalabilité
+- **VueJS** et **Angular** sont les frameworks front où j'ai le plus d'expérience, maintenant **React** frappe à ma porte.
+- J'aime partager mes connaissances avec les autres (humains ET assistants IA 🤖).
+- Je suis très curieux de nature et j'ai hâte d'apprendre de nouvelles choses.
+- **Important** : Je fais la relecture et la validation de tout ce que génère l'IA. Je maîtrise le domaine et je contrôle la qualité 🔍
+- Je ne suis pas intéressé par WinDev, C++, C#, .Net, PHP, Ruby, etc. :smile: mais avec IA... on peut faire des miracles, non ? 😉
+- **Fun fact** : Mon code de développeur diminue chaque jour, mais mes compétences IA augmentent... c'est pas une coïncidence 📉📈
+- **Bonus** : Je suis guitariste classique et j'improvise jazz 🎸. L'IA ne m'aide pas là-dedans... faut bien garder UN domaine où je suis maître 😄
