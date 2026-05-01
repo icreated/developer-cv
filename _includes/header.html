@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://api.bloggify.net" crossorigin>
 
     <!-- Preload: URLs must exactly match <link> href (incl. ?v=) or browser double-fetches -->
+    <link rel="preload" href="{{ 'assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
     <link rel="preload" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
     <link rel="preload" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
     <link rel="preload" href="{{ 'assets/fontawesome/webfonts/fa-solid-900.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin="anonymous">
