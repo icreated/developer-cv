@@ -6,6 +6,12 @@
   --color-calendar-graph-day-L4-bg: #0a4208;
 }
 
+.ContributionCalendar-day {
+    min-width: 32px;
+    min-height: 32px;
+    display: block;
+}
+
 .ContributionCalendar-day[data-level='0'] {
     background-color: var(--color-calendar-graph-day-bg);
 }
@@ -31,7 +37,9 @@ table.ContributionCalendar-grid {
 }
 
 table.ContributionCalendar-grid td {
-    padding: 4pt;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 table.ContributionCalendar-grid td span.sr-only {
