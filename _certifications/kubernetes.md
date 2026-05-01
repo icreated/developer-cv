@@ -13,7 +13,7 @@ expired: true
 ---
 
 <p align="center">
-<img src="{{ page.badgeUrl }}" alt="{{ page.title }}" style="width: 100px;">
+<img src="{{ page.badgeUrl }}" alt="{{ page.title }}" width="100" height="100" />
 </p>
 
 ### Description
