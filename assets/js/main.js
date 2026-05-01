@@ -65,26 +65,24 @@ function initSkillsHumorAnimation() {
     });
 
     function applyFrame(level) {
-        // Batch all DOM writes in one rAF to avoid forced reflow
-        requestAnimationFrame(() => {
-            bars.forEach((bar) => {
-                const skillName = (bar.dataset.skill || "").trim();
-                const label = labelMap.get(bar);
-                const base = initialValues[skillName] || 0;
-                const isIA = skillName.toUpperCase() === "IA";
-                const w = isIA ? level : base * (1 - 0.5 * (level / 100));
-                const rounded = Math.round(w);
-                bar.style.width = `${w}%`;
-                bar.setAttribute("aria-valuenow", String(rounded));
-                if (label) label.textContent = `${rounded}%`;
-            });
+        // DOM writes happen directly inside the rAF callback that called us
+        bars.forEach((bar) => {
+            const skillName = (bar.dataset.skill || "").trim();
+            const label = labelMap.get(bar);
+            const base = initialValues[skillName] || 0;
+            const isIA = skillName.toUpperCase() === "IA";
+            const w = isIA ? level : base * (1 - 0.5 * (level / 100));
+            const rounded = Math.round(w);
+            bar.style.width = `${w}%`;
+            bar.setAttribute("aria-valuenow", String(rounded));
+            if (label) label.textContent = `${rounded}%`;
         });
     }
 
     function startAnimation() {
         let level = 0;
         let lastTime = 0;
-        const STEP_MS = 50; // 20 fps — smooth enough, 5× fewer reflows than 100ms
+        const STEP_MS = 100; // 10 fps — half the reflows, visually smooth
 
         function forward(ts) {
             if (ts - lastTime >= STEP_MS) {
@@ -133,25 +131,23 @@ function initSoftSkillsHumorAnimation() {
     });
 
     function applyFrame(level) {
-        requestAnimationFrame(() => {
-            bars.forEach((bar) => {
-                const skillName = (bar.dataset.skill || "").trim();
-                const label = labelMap.get(bar);
-                const base = initialValues[skillName] || 0;
-                const isIA = skillName.toUpperCase() === "IA";
-                const w = isIA ? level : base + (Math.random() - 0.5) * 10;
-                const rounded = Math.round(w);
-                bar.style.width = `${w}%`;
-                bar.setAttribute("aria-valuenow", String(rounded));
-                if (label) label.textContent = `${rounded}%`;
-            });
+        bars.forEach((bar) => {
+            const skillName = (bar.dataset.skill || "").trim();
+            const label = labelMap.get(bar);
+            const base = initialValues[skillName] || 0;
+            const isIA = skillName.toUpperCase() === "IA";
+            const w = isIA ? level : base + (Math.random() - 0.5) * 10;
+            const rounded = Math.round(w);
+            bar.style.width = `${w}%`;
+            bar.setAttribute("aria-valuenow", String(rounded));
+            if (label) label.textContent = `${rounded}%`;
         });
     }
 
     function startAnimation() {
         let level = 0;
         let lastTime = 0;
-        const STEP_MS = 50;
+        const STEP_MS = 100;
 
         function forward(ts) {
             if (ts - lastTime >= STEP_MS) {

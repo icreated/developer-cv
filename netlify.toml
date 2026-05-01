@@ -1,0 +1,18 @@
+[build]
+  command = """
+    bundle exec jekyll build && \
+    npx --yes purgecss \
+      --css _site/assets/plugins/bootstrap/css/bootstrap.min.css \
+      --content '_site/**/*.html' \
+      --output _site/assets/plugins/bootstrap/css/ && \
+    npx purgecss \
+      --css _site/assets/fontawesome/css/all.min.css \
+      --content '_site/**/*.html' \
+      --safelist pattern:/^fa/ \
+      --output _site/assets/fontawesome/css/
+  """
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+  RUBY_VERSION = "3.3"
