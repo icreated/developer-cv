@@ -17,13 +17,13 @@
     <script defer src="{{ 'assets/js/trusted-types-policies.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
     <!-- All scripts deferred: browser discovers & downloads everything in parallel from first parse -->
-    <!-- FontAwesome JS -->
-    <script defer src="{{ 'assets/fontawesome/js/all.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}">
     <!-- Bootstrap deps -->
-    <script defer src="{{ 'assets/plugins/popper.min.js' | relative_url }}"></script>
-    <script defer src="{{ 'assets/plugins/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
+    <script defer src="{{ 'assets/plugins/popper.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script defer src="{{ 'assets/plugins/bootstrap/js/bootstrap.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <!-- Plugins -->
-    <script defer src="{{ 'assets/plugins/dark-mode-switch/dark-mode-switch.min.js' | relative_url }}"></script>
+    <script defer src="{{ 'assets/plugins/dark-mode-switch/dark-mode-switch.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ 'assets/plugins/github-calendar/dist/github-calendar.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <!-- App scripts -->
     <script defer src="{{ 'assets/js/framebusting.js?v=' | append: site.github.build_revision | relative_url }}"></script>
