@@ -27,10 +27,11 @@
     <link rel="preload" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
     <link rel="preload" href="{{ 'assets/fontawesome/webfonts/fa-solid-900.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{{ 'assets/fontawesome/webfonts/fa-brands-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin="anonymous">
-        <link rel="preload" as="image"
-            href="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}"
-            imagesrcset="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }} 1x, {{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }} 2x, {{ 'assets/images/profile-480.avif?v=' | append: site.github.build_revision | relative_url }} 3x"
-            imagesizes="160px">
+    <link rel="preload" as="image"
+          href="{{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }}"
+          imagesrcset="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }} 1x, {{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }} 2x, {{ 'assets/images/profile-480.avif?v=' | append: site.github.build_revision | relative_url }} 3x"
+          imagesizes="160px"
+          fetchpriority="high">
 
     <!-- font-display: swap — inlined to remove the extra blocking request -->
     <style>
