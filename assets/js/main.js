@@ -1,33 +1,25 @@
 "use strict";
 
+document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach(el => new bootstrap.Tooltip(el));
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-
-    /* Github Calendar - https://github.com/IonicaBizau/github-calendar
-       global_stats: false — the bundled parser expects GitHub's old
-       SVG format and returns zeroes against the current <table> HTML.
-       proxy with credentials:omit — prevents api.bloggify.net from
-       storing third-party cookies (FB_SESSION) in the browser. */
-    if (document.getElementById("github-graph")) {
-        // Discard any prior bad cache (e.g. "[object Response]" from earlier proxy bug).
-        const cached = localStorage.getItem("gh_calendar_content.icreated");
-        if (!cached || !cached.includes("<")) {
-            localStorage.removeItem("gh_calendar_content.icreated");
-            localStorage.removeItem("gh_calendar_expire.icreated");
-        }
-        GitHubCalendar("#github-graph", "icreated", {
-            responsive: true,
-            global_stats: false,
-            proxy(username) {
-                return fetch(
-                    `https://api.bloggify.net/gh-calendar/?username=${username}`,
-                    { credentials: "omit" }
-                ).then(r => r.text());
-            }
-        });
+// GitHub Calendar — https://github.com/IonicaBizau/github-calendar
+if (document.getElementById("github-graph")) {
+    // Drop stale cache entries (non-HTML values from earlier proxy bug)
+    const cached = localStorage.getItem("gh_calendar_content.icreated");
+    if (!cached || !cached.includes("<")) {
+        localStorage.removeItem("gh_calendar_content.icreated");
+        localStorage.removeItem("gh_calendar_expire.icreated");
     }
+    GitHubCalendar("#github-graph", "icreated", {
+        responsive: true,
+        global_stats: false,
+        proxy: username => fetch(
+            `https://api.bloggify.net/gh-calendar/?username=${username}`,
+            { credentials: "omit" }
+        ).then(r => r.text())
+    }).catch(() => {});
+}
 
 function goBack() {
 	if (document.referrer == "") {
@@ -50,14 +42,10 @@ function initSkillsHumorAnimation() {
 
     // Store initial percentages
     const initialValues = {};
-    let iaBar = null;
     bars.forEach((bar) => {
         const skillName = (bar.dataset.skill || "").trim();
         const basePercentage = parseInt(bar.dataset.basePercentage || "0", 10);
         initialValues[skillName] = basePercentage;
-        if (skillName.toUpperCase() === "IA") {
-            iaBar = bar;
-        }
     });
 
     function startAnimation() {
@@ -92,10 +80,9 @@ function initSkillsHumorAnimation() {
 
             aiLevel = Math.min(maxLevel, aiLevel + 2);
             if (aiLevel < maxLevel) {
-                window.setTimeout(animateSkillsForward, 100);
+                setTimeout(animateSkillsForward, 100);
             } else {
-                // Hold for 3 seconds then animate back
-                window.setTimeout(animateSkillsBackward, 3000);
+                setTimeout(animateSkillsBackward, 3000);
             }
         }
 
@@ -130,10 +117,9 @@ function initSkillsHumorAnimation() {
 
                 returnLevel = Math.max(0, returnLevel - 2);
                 if (returnLevel > 0) {
-                    window.setTimeout(animateReturn, 100);
+                    setTimeout(animateReturn, 100);
                 } else {
-                    // Restart animation after reset
-                    window.setTimeout(startAnimation, 500);
+                    setTimeout(startAnimation, 500);
                 }
             }
 
@@ -199,10 +185,9 @@ function initSoftSkillsHumorAnimation() {
 
             iaLevel = Math.min(maxLevel, iaLevel + 2);
             if (iaLevel < maxLevel) {
-                window.setTimeout(animateSoftSkillsForward, 100);
+                setTimeout(animateSoftSkillsForward, 100);
             } else {
-                // Hold for 3 seconds then animate back
-                window.setTimeout(animateSoftSkillsBackward, 3000);
+                setTimeout(animateSoftSkillsBackward, 3000);
             }
         }
 
@@ -237,10 +222,9 @@ function initSoftSkillsHumorAnimation() {
 
                 returnLevel = Math.max(0, returnLevel - 2);
                 if (returnLevel > 0) {
-                    window.setTimeout(animateReturn, 100);
+                    setTimeout(animateReturn, 100);
                 } else {
-                    // Restart animation after reset
-                    window.setTimeout(startAnimation, 500);
+                    setTimeout(startAnimation, 500);
                 }
             }
 
