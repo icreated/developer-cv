@@ -54,7 +54,7 @@
 	        <div class="row align-items-center">
 			    <div class="col">
                     <a href="{{ '/' | absolute_url }}" aria-label="Accueil">
-                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}" alt="Photo de profil de Sergey Polyarus" width="160" height="160" />
+                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}" srcset="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }} 1x, {{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }} 2x, {{ 'assets/images/profile-480.avif?v=' | append: site.github.build_revision | relative_url }} 3x" sizes="160px" alt="Photo de profil de Sergey Polyarus" width="160" height="160" />
                     </a>
 		            <div class="profile-content">
 		                <h1 class="name"><span class="integral">∫</span>created</h1>
