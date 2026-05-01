@@ -198,3 +198,60 @@ body[data-theme="dark"] .github .section-inner a:hover {
     display: none !important;
 }
 
+/* Accessibility fixes: Education contrast */
+.education .section-inner.shadow-sm.rounded {
+    background: #ffffff;
+    color: #2d3338;
+}
+.education .item .title {
+    color: #2d3338;
+}
+.education .item .university,
+.education .item .university .year,
+.education .item .year,
+.education span.year {
+    color: #4b5563 !important;
+}
+
+body[data-theme="dark"] .education .section-inner.shadow-sm.rounded {
+    background: #1f242b;
+    color: #e6edf3;
+}
+body[data-theme="dark"] .education .item .title {
+    color: #f0f6fc;
+}
+body[data-theme="dark"] .education .item .university,
+body[data-theme="dark"] .education .item .university .year,
+body[data-theme="dark"] .education .item .year,
+body[data-theme="dark"] .education span.year {
+    color: #c9d1d9 !important;
+}
+
+/* Accessibility fixes: GitHub calendar touch target size/spacing */
+table.ContributionCalendar-grid {
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-spacing: 2px !important;
+}
+
+table.ContributionCalendar-grid td.ContributionCalendar-day,
+table.ContributionCalendar-grid td[id^='contribution-day-component-'].ContributionCalendar-day {
+    display: table-cell !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+}
+
+table.ContributionCalendar-grid td.ContributionCalendar-day::after,
+table.ContributionCalendar-grid td[id^='contribution-day-component-'].ContributionCalendar-day::after {
+    content: '' !important;
+    display: block !important;
+    padding-top: 100% !important;
+}
+
+#github-graph {
+    overflow-x: hidden;
+}
+
