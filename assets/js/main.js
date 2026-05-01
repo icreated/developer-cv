@@ -1,7 +1,9 @@
 "use strict";
 
-document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    .forEach(el => new bootstrap.Tooltip(el));
+// Tooltips require hover — skip entirely on touch/mobile devices to avoid
+// Popper.js layout queries (getBoundingClientRect + offsetWidth) at page load.
+// They are initialized lazily inside lazyInit("skillset") below.
+const _isTouchDevice = window.matchMedia("(hover: none)").matches;
 
 // Lazy-init helper: run fn() only when element enters the viewport
 function lazyInit(id, fn) {
@@ -110,7 +112,15 @@ function initSkillsHumorAnimation() {
     startAnimation();
 }
 
-lazyInit("skillset", initSkillsHumorAnimation);
+lazyInit("skillset", () => {
+    // Initialize tooltips only when the skills section is visible and only on
+    // non-touch devices (touch devices don't support hover-triggered tooltips).
+    if (!_isTouchDevice) {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            .forEach(el => new bootstrap.Tooltip(el));
+    }
+    initSkillsHumorAnimation();
+});
 
 function initSoftSkillsHumorAnimation() {
     const softSkillset = document.getElementById("soft-skillset");
