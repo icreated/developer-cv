@@ -27,6 +27,10 @@
     <link rel="preload" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
     <link rel="preload" href="{{ 'assets/fontawesome/webfonts/fa-solid-900.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="{{ 'assets/fontawesome/webfonts/fa-brands-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" as="image"
+            href="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}"
+            imagesrcset="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }} 1x, {{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }} 2x, {{ 'assets/images/profile-480.avif?v=' | append: site.github.build_revision | relative_url }} 3x"
+            imagesizes="160px">
 
     <!-- font-display: swap — inlined to remove the extra blocking request -->
     <style>
@@ -76,7 +80,7 @@
 	        <div class="row align-items-center">
 			    <div class="col">
                     <a href="{{ '/' | absolute_url }}" aria-label="Accueil">
-                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}" srcset="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }} 1x, {{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }} 2x, {{ 'assets/images/profile-480.avif?v=' | append: site.github.build_revision | relative_url }} 3x" sizes="160px" alt="Photo de profil de Sergey Polyarus" width="160" height="160" />
+                        <img class="profile-image img-fluid float-md-start float-end mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle shadow-sm" src="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }}" srcset="{{ 'assets/images/profile.avif?v=' | append: site.github.build_revision | relative_url }} 1x, {{ 'assets/images/profile-320.avif?v=' | append: site.github.build_revision | relative_url }} 2x, {{ 'assets/images/profile-480.avif?v=' | append: site.github.build_revision | relative_url }} 3x" sizes="160px" alt="Photo de profil de Sergey Polyarus" width="160" height="160" loading="eager" fetchpriority="high" decoding="async" />
                     </a>
 		            <div class="profile-content">
 		                <h1 class="name"><span class="integral">∫</span>created</h1>
