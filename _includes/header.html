@@ -16,10 +16,24 @@
     <!-- Trusted Types Policies -->
     <script defer src="{{ 'assets/js/trusted-types-policies.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
-    <!-- All scripts deferred: browser discovers & downloads everything in parallel from first parse -->
-    <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ 'assets/css/font-display.css?v=' | append: site.github.build_revision | relative_url }}">
+    <!-- Preload non-critical CSS so browser fetches early without blocking render -->
+    <link rel="preload" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
+    <link rel="preload" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}" as="style">
+
+    <!-- FontAwesome — deferred, not render-blocking -->
+    <link rel="stylesheet" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}" media="print" data-async>
+    <noscript><link rel="stylesheet" href="{{ 'assets/fontawesome/css/all.min.css?v=' | append: site.github.build_revision | relative_url }}"></noscript>
+
+    <!-- font-display: swap override — inlined to avoid an extra request -->
+    <style>
+    @font-face { font-family: "Font Awesome 6 Brands"; font-style: normal; font-weight: 400; font-display: swap; src: url("{{ 'assets/fontawesome/webfonts/fa-brands-400.woff2' | relative_url }}") format("woff2"); }
+    @font-face { font-family: "Font Awesome 6 Free";   font-style: normal; font-weight: 900; font-display: swap; src: url("{{ 'assets/fontawesome/webfonts/fa-solid-900.woff2'  | relative_url }}") format("woff2"); }
+    @font-face { font-family: "Font Awesome 5 Brands"; font-style: normal; font-weight: 400; font-display: swap; src: url("{{ 'assets/fontawesome/webfonts/fa-brands-400.woff2' | relative_url }}") format("woff2"); }
+    @font-face { font-family: "Font Awesome 5 Free";   font-style: normal; font-weight: 900; font-display: swap; src: url("{{ 'assets/fontawesome/webfonts/fa-solid-900.woff2'  | relative_url }}") format("woff2"); }
+    @font-face { font-family: "FontAwesome"; font-style: normal; font-weight: 900; font-display: swap; src: url("{{ 'assets/fontawesome/webfonts/fa-solid-900.woff2'  | relative_url }}") format("woff2"); }
+    @font-face { font-family: "FontAwesome"; font-style: normal; font-weight: 400; font-display: swap; src: url("{{ 'assets/fontawesome/webfonts/fa-brands-400.woff2' | relative_url }}") format("woff2"); }
+    </style>
+
     <!-- Bootstrap deps -->
     <script defer src="{{ 'assets/plugins/popper.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ 'assets/plugins/bootstrap/js/bootstrap.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
@@ -33,8 +47,9 @@
     <script defer src="{{ 'assets/js/google-analytics-init.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ 'assets/js/feed-loader.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}">
+    <!-- Global CSS — deferred, not render-blocking -->
+    <link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}" media="print" data-async>
+    <noscript><link rel="stylesheet" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}"></noscript>
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ 'assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}">
