@@ -147,4 +147,111 @@ function initSkillsHumorAnimation() {
 }
 
 initSkillsHumorAnimation();
+
+function initSoftSkillsHumorAnimation() {
+    const softSkillset = document.getElementById("soft-skillset");
+    if (!softSkillset) {
+        return;
+    }
+
+    const bars = softSkillset.querySelectorAll(".level-bar-inner");
+    if (!bars.length) {
+        return;
+    }
+
+    // Store initial percentages
+    const initialValues = {};
+    bars.forEach((bar) => {
+        const skillName = (bar.dataset.skill || "").trim();
+        const basePercentage = parseInt(bar.dataset.basePercentage || "0", 10);
+        initialValues[skillName] = basePercentage;
+    });
+
+    function startAnimation() {
+        let iaLevel = 0;
+        const maxLevel = 100;
+
+        function animateSoftSkillsForward() {
+            bars.forEach((bar) => {
+                const skillName = (bar.dataset.skill || "").trim();
+                const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
+                const basePercentage = initialValues[skillName] || 0;
+
+                if (skillName.toUpperCase() === "IA") {
+                    bar.style.width = `${iaLevel}%`;
+                    bar.setAttribute("aria-valuenow", String(iaLevel));
+                    if (label) {
+                        label.textContent = `${iaLevel}%`;
+                    }
+                    return;
+                }
+
+                // Random oscillation: ±5% around base percentage
+                const randomVariation = (Math.random() - 0.5) * 10; // -5 to +5
+                const newWidth = basePercentage + randomVariation;
+
+                bar.style.width = `${newWidth}%`;
+                bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
+                if (label) {
+                    label.textContent = `${Math.round(newWidth)}%`;
+                }
+            });
+
+            iaLevel = Math.min(maxLevel, iaLevel + 2);
+            if (iaLevel < maxLevel) {
+                window.setTimeout(animateSoftSkillsForward, 100);
+            } else {
+                // Hold for 3 seconds then animate back
+                window.setTimeout(animateSoftSkillsBackward, 3000);
+            }
+        }
+
+        function animateSoftSkillsBackward() {
+            let returnLevel = maxLevel;
+
+            function animateReturn() {
+                bars.forEach((bar) => {
+                    const skillName = (bar.dataset.skill || "").trim();
+                    const label = bar.parentElement?.parentElement?.querySelector(".skill-level");
+                    const basePercentage = initialValues[skillName] || 0;
+
+                    if (skillName.toUpperCase() === "IA") {
+                        bar.style.width = `${returnLevel}%`;
+                        bar.setAttribute("aria-valuenow", String(returnLevel));
+                        if (label) {
+                            label.textContent = `${returnLevel}%`;
+                        }
+                        return;
+                    }
+
+                    // Random oscillation: ±5% around base percentage
+                    const randomVariation = (Math.random() - 0.5) * 10; // -5 to +5
+                    const newWidth = basePercentage + randomVariation;
+
+                    bar.style.width = `${newWidth}%`;
+                    bar.setAttribute("aria-valuenow", String(Math.round(newWidth)));
+                    if (label) {
+                        label.textContent = `${Math.round(newWidth)}%`;
+                    }
+                });
+
+                returnLevel = Math.max(0, returnLevel - 2);
+                if (returnLevel > 0) {
+                    window.setTimeout(animateReturn, 100);
+                } else {
+                    // Restart animation after reset
+                    window.setTimeout(startAnimation, 500);
+                }
+            }
+
+            animateReturn();
+        }
+
+        animateSoftSkillsForward();
+    }
+
+    startAnimation();
+}
+
+initSoftSkillsHumorAnimation();
 //# sourceMappingURL=main.js.map
