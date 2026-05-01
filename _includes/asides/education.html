@@ -5,7 +5,7 @@
             {% capture education %}{% include education.md %}{% endcapture %}
             {{ education | markdownify }}
 
-            {% assign schools = site.schools | where: 'status', 'published' %}
+            {% assign schools = site.schools %}
             {% for school in schools %}
             <div class="item">
                 <h3 class="title"><i class="fas fa-graduation-cap"></i> {{ school.graduation }}</h3>
