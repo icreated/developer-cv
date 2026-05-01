@@ -3,7 +3,7 @@ category: Certification
 title: "Neo4j Certified Professional"
 company: Neo4j Graph Academy
 description: |
-    La Certification Neo4j Certified Professional certifie les compétences dans la conception et le développement d'applications NoSQL basées sur des graphes, maîtrise des concepts de base de Neo4j et de Cypher. 
+  La Certification Neo4j Certified Professional certifie les compétences dans la conception et le développement d'applications NoSQL basées sur des graphes, maîtrise des concepts de base de Neo4j et de Cypher.
 status: published
 badgeUrl: /assets/images/badges/neo4j-certification.avif
 badgeSrcset: /assets/images/badges/neo4j-certification-96.avif 96w, /assets/images/badges/neo4j-certification-156.avif 156w

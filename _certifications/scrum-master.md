@@ -3,7 +3,7 @@ category: Certification
 title: Professional Scrum Master™ I (PSM I)
 company: Scrum.org
 description: |
-    La Certification Professional Scrum Master™ I (PSM I) certifie les compétences dans la comprehension de la théorie de Scrum, des règles et des valeurs de Scrum, la façon dont elles sont appliquées dans les situations réelles.
+  La Certification Professional Scrum Master™ I (PSM I) certifie les compétences dans la comprehension de la théorie de Scrum, des règles et des valeurs de Scrum, la façon dont elles sont appliquées dans les situations réelles.
 status: published
 badgeUrl: /assets/images/badges/professional-scrum-master.avif
 badgeSrcset: /assets/images/badges/professional-scrum-master-96.avif 96w, /assets/images/badges/professional-scrum-master-156.avif 156w

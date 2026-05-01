@@ -3,7 +3,7 @@ category: Certification
 title: "Microsoft Certified: Azure AI Fundamentals"
 company: Microsoft
 description: |
-    La Certification Azure AI Fundamentals certifie les compétences dans la compréhension des principes fondamentaux de l'apprentissage automatique (ML) et de l'intelligence artificielle (AI) et la connaissance des services Microsoft Azure qui peuvent être utilisés pour créer des solutions ML et AI.
+  La Certification Azure AI Fundamentals certifie les compétences dans la compréhension des principes fondamentaux de l'apprentissage automatique (ML) et de l'intelligence artificielle (AI) et la connaissance des services Microsoft Azure qui peuvent être utilisés pour créer des solutions ML et AI.
 status: published
 badgeUrl: /assets/images/badges/microsoft-certified-azure-ai-fundamentals.avif
 badgeSrcset: /assets/images/badges/microsoft-certified-azure-ai-fundamentals-96.avif 96w, /assets/images/badges/microsoft-certified-azure-ai-fundamentals-156.avif 156w
