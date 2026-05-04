@@ -14,7 +14,7 @@
     margin: .25em .1em
 }
 
-body[data-theme="dark"] .tag {
+html[data-theme="dark"] .tag {
     background: #3AAA64;
     color: #0d2e18;
   }
@@ -65,7 +65,7 @@ h1.tag {
     color: #fff;
 }
 
-body[data-theme="dark"] .ribbon-expired-text {
+html[data-theme="dark"] .ribbon-expired-text {
     background-color: #3a4150;
     color: #cbd5e0;
 }
@@ -80,7 +80,7 @@ body[data-theme="dark"] .ribbon-expired-text {
     vertical-align: middle;
 }
 
-body[data-theme="dark"] .tag-expired {
+html[data-theme="dark"] .tag-expired {
     color: #8b949e;
     border-color: #555;
 }
@@ -94,7 +94,7 @@ body[data-theme="dark"] .tag-expired {
     --color-calendar-graph-day-L4-bg: #216e39;
 }
 
-body[data-theme="dark"] {
+html[data-theme="dark"] {
     --color-calendar-graph-day-bg: #21262d;
     --color-calendar-graph-day-L1-bg: #0e4429;
     --color-calendar-graph-day-L2-bg: #006d32;
@@ -112,8 +112,8 @@ body[data-theme="dark"] {
     fill: #57606a;
 }
 
-body[data-theme="dark"] .calendar-graph text.wday,
-body[data-theme="dark"] .calendar-graph text.month {
+html[data-theme="dark"] .calendar-graph text.wday,
+html[data-theme="dark"] .calendar-graph text.month {
     fill: #8b949e;
 }
 
@@ -149,7 +149,7 @@ td.ContributionCalendar-label span[aria-hidden='true'] {
 
 /* Dark-mode: give the section a darker backdrop so level-0 cells
    (#161b22) remain visible instead of melting into the theme bg */
-body[data-theme="dark"] .github .section-inner {
+html[data-theme="dark"] .github .section-inner {
     background: #0d1117;
 }
 
@@ -169,14 +169,14 @@ body[data-theme="dark"] .github .section-inner {
 .github .section-inner a {
     color: #57606a;
 }
-body[data-theme="dark"] .github .section-inner a {
+html[data-theme="dark"] .github .section-inner a {
     color: #8b949e;
 }
 .github .section-inner a:hover {
     color: #0969da;
     text-decoration: underline;
 }
-body[data-theme="dark"] .github .section-inner a:hover {
+html[data-theme="dark"] .github .section-inner a:hover {
     color: #2f81f7;
 }
 
@@ -219,17 +219,17 @@ body[data-theme="dark"] .github .section-inner a:hover {
     color: #4b5563 !important;
 }
 
-body[data-theme="dark"] .education .section-inner.shadow-sm.rounded {
+html[data-theme="dark"] .education .section-inner.shadow-sm.rounded {
     background: #1f242b;
     color: #e6edf3;
 }
-body[data-theme="dark"] .education .item .title {
+html[data-theme="dark"] .education .item .title {
     color: #f0f6fc;
 }
-body[data-theme="dark"] .education .item .university,
-body[data-theme="dark"] .education .item .university .year,
-body[data-theme="dark"] .education .item .year,
-body[data-theme="dark"] .education span.year {
+html[data-theme="dark"] .education .item .university,
+html[data-theme="dark"] .education .item .university .year,
+html[data-theme="dark"] .education .item .year,
+html[data-theme="dark"] .education span.year {
     color: #c9d1d9 !important;
 }
 

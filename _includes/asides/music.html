@@ -14,7 +14,7 @@
                         {% else %}
                         <span title="{{ music.description }}" class="title">{{ music.artist }}</span> - <a class="more-link" href="{{ music.link }}">{{ music.title }}</a>
                         <audio controls>
-                            <source src="{{ music.link }}" type="audio/mpeg">
+                            <source src="{{ music.link | relative_url }}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                          {% endif %}

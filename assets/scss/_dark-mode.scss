@@ -26,9 +26,13 @@
 }
 
 
-body[data-theme="dark"] {
+html[data-theme="dark"] {
 
 	background: $dm-background;
+
+	body {
+		background: $dm-background;
+	}
 
 	a {
 		color: $color-2;
