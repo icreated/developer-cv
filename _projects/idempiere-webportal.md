@@ -8,14 +8,12 @@ status: published
 layout: post
 link: https://webportal.icreated.co
 imageUrl: /assets/images/projects/idempiere-webportal.avif
-imageSrcset: /assets/images/projects/idempiere-webportal-360.avif 360w, /assets/images/projects/idempiere-webportal-600.avif 600w
-imageSizes: "(max-width: 767px) 100vw, 600px"
 imageWidth: 600
 imageHeight: 284
 ---
 
 <p align="center">
-<img src="{{ page.imageUrl }}" srcset="{{ page.imageSrcset }}" sizes="{{ page.imageSizes }}" alt="{{ page.title }}" width="{{ page.imageWidth }}" height="{{ page.imageHeight }}" />
+<img src="{{ page.imageUrl }}" alt="{{ page.title }}" width="{{ page.imageWidth }}" height="{{ page.imageHeight }}" />
 </p>
 
 # Frontend WebPortal

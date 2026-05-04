@@ -10,7 +10,7 @@
                     <div class="col-md-4 col-12">
                         <div class="position-relative d-inline-block">
                             <a href="{{ certification.certificationUrl }}" target="_blank" rel="noopener noreferrer">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" srcset="{{ certification.badgeSrcset | default: certification.badgeUrl }}" sizes="{{ certification.badgeSizes | default: '(max-width: 576px) 96px, 156px' }}" alt="Badge {{ certification.title }}" width="156" height="156" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ certification.badgeUrl }}" alt="Badge {{ certification.title }}" width="156" height="156" />
                             </a>
                             {% if certification.expired %}
                             <div class="ribbon-expired">

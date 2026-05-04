@@ -9,10 +9,10 @@
                         <div class="featured-image has-ribbon">
                             {% if project.link %}
                             <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" srcset="{{ project.imageSrcset | default: project.imageUrl }}" sizes="{{ project.imageSizes | default: '(max-width: 767px) 100vw, 600px' }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
                             </a>
                             {% else %}
-                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" srcset="{{ project.imageSrcset | default: project.imageUrl }}" sizes="{{ project.imageSizes | default: '(max-width: 767px) 100vw, 600px' }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
                             {% endif %}
                             <div class="ribbon">
                                 <div class="text">Nouveau</div>
@@ -42,11 +42,11 @@
                     <div class="item row">
                         {% if project.link %}
                             <a class="col-md-4 col-12" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" srcset="{{ project.imageSrcset | default: project.imageUrl }}" sizes="{{ project.imageSizes | default: '(max-width: 767px) 100vw, 33vw' }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
                             </a>
                         {% else %}
                             <div class="col-md-4 col-12">
-                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" srcset="{{ project.imageSrcset | default: project.imageUrl }}" sizes="{{ project.imageSizes | default: '(max-width: 767px) 100vw, 33vw' }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
+                                <img class="img-fluid project-image rounded shadow-sm" src="{{ project.imageUrl }}" alt="{{ project.title }}" width="{{ project.imageWidth | default: 600 }}" height="{{ project.imageHeight | default: 300 }}" />
                             </div>
                         {% endif %}
                         <div class="desc col-md-8 col-12">

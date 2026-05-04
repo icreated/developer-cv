@@ -1,4 +1,4 @@
-<a href="https://icreated.fr" target="_blank"><img src="assets/images/icreated-screenshort-750.png" srcset="assets/images/icreated-screenshort-750.png 750w, assets/images/icreated-screenshort-1200.png 1200w, assets/images/icreated-screenshort.png 1458w" sizes="(max-width: 768px) 100vw, 750px" alt="Developer resume" width="750" height="429" /></a>
+<a href="https://icreated.fr" target="_blank"><img src="assets/images/icreated-screenshort.png" alt="Developer resume" width="750" /></a>
 
 I just updated the [Xiaoying Riley](https://twitter.com/3rdwave_themes) template to Jekyll and use it as my resume freely hosted on Github Pages.
 You can get inspired by my integration but follow the original license of the template.

@@ -6,15 +6,13 @@ description: |
   Examen de certification Spring Professional de VMware confirme les connaissances et les compétences de base nécessaires pour développer des applications et des services Spring et Spring Boot.
 status: published
 badgeUrl: /assets/images/badges/vmware-spring-professional.avif
-badgeSrcset: /assets/images/badges/vmware-spring-professional-96.avif 96w, /assets/images/badges/vmware-spring-professional-156.avif 156w
-badgeSizes: "(max-width: 576px) 96px, 156px"
 certificationUrl: https://www.credly.com/badges/ff60dd0e-409a-4d54-88f9-cc284a59b9bb/public_url
 layout: post
 order: 10
 ---
 
 <p align="center">
-<img src="{{ page.badgeUrl }}" srcset="{{ page.badgeSrcset }}" sizes="{{ page.badgeSizes }}" alt="{{ page.title }}" width="100" height="100" />
+<img src="{{ page.badgeUrl }}" alt="{{ page.title }}" width="100" height="100" />
 </p>
 
 ### Description

@@ -6,8 +6,6 @@ description: |
   La certification Certified Kubernetes Application Developer (CKAD) certifie que les utilisateurs peuvent concevoir, construire, configurer et exposer des applications cloud natives pour Kubernetes.
 status: published
 badgeUrl: /assets/images/badges/ckad-certified-kubernetes-application-developer.avif
-badgeSrcset: /assets/images/badges/ckad-certified-kubernetes-application-developer-96.avif 96w, /assets/images/badges/ckad-certified-kubernetes-application-developer-156.avif 156w
-badgeSizes: "(max-width: 576px) 96px, 156px"
 certificationUrl: https://www.credly.com/badges/903f45bd-1cb5-4a2f-bbd2-67142a43c09c/public_url
 layout: post
 order: 20
@@ -15,7 +13,7 @@ expired: true
 ---
 
 <p align="center">
-<img src="{{ page.badgeUrl }}" srcset="{{ page.badgeSrcset }}" sizes="{{ page.badgeSizes }}" alt="{{ page.title }}" width="100" height="100" />
+<img src="{{ page.badgeUrl }}" alt="{{ page.title }}" width="100" height="100" />
 </p>
 
 ### Description
