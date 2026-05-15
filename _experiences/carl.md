@@ -13,7 +13,7 @@ CARL Software est un éditeur de solutions de GMAO (Gestion de Maintenance Assis
 
 Au sein de l’équipe R&D, je suis intervenu sur des sujets de maintenance applicative, d’amélioration continue et d’optimisation technique d’applications Java d’entreprise.
 
-**Missions réalisées**:
+#### Missions réalisées
 
 - Réalisation d’un POC de migration de l’application Carl Source vers une architecture Spring Boot
 - Analyse et optimisation des performances SQL

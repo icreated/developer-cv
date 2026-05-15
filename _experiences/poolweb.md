@@ -27,7 +27,7 @@ J’ai accompagné la croissance de Poolweb, distributeur spécialisé dans les 
 
 Au cours de cette expérience, j’ai conçu, développé et maintenu des applications métiers critiques autour de l’**ERP Adempiere**, en intervenant sur l’ensemble de la chaîne technique : architecture logicielle, développement backend Java EE, bases de données Oracle/PostgreSQL, interconnexion applicative, EDI, Web Services et optimisation des flux métier.
 
-**Compétences et réalisations principales**:
+#### Compétences et réalisations principales
 
 - Paramétrage, administration et développement autour de l’**ERP Adempiere**
 - Architecture et développement d’applications Java EE / Jakarta EE

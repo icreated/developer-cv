@@ -303,7 +303,7 @@ a.dotted-link {
     .item {
         margin-bottom: 30px;
         .title {
-            font-size: 16px;
+            font-size: 18px;
             margin-top: 0;
             margin-bottom: 5px;
             line-height: 1.5;
@@ -322,6 +322,9 @@ a.dotted-link {
                 color: $grey;
                 font-weight: normal;
             }
+        }
+        h4 {
+            font-size: 1rem;
         }
         blockquote {
             color: $text-color-secondary;

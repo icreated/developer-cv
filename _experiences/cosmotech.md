@@ -24,7 +24,7 @@ sitemap: false
 
 Au sein de l’équipe SDK, j’ai participé à l’évolution de la plateforme cloud et à la modernisation de son architecture technique dans un environnement Kubernetes et Microsoft Azure.
 
-**Missions réalisées :**
+#### Missions réalisées
 
 - Développement du module Dataset pour la gestion et l’intégration des données métier
 - Développement d’API backend en Kotlin

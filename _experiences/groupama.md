@@ -30,7 +30,7 @@ Au sein de l’équipe SUSHI, j’ai participé au développement d’applicatio
 
 J’ai notamment contribué au développement de l’application COHAB, dédiée à l’extraction, au contrôle des habilitations, à la gouvernance des accès et à l’automatisation des processus de provisioning.
 
-**Missions réalisées:**
+#### Missions réalisées
 
 - Développement frontend d’applications Angular
 - Migration de composants Bootstrap vers une architecture Web Components

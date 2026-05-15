@@ -25,7 +25,7 @@ sitemap: false
 
 Au sein de l'équipe agile **PWIE** chez Groupama, j’ai contribué à la modernisation d’un système d’information critique en participant au décommissionnement du CRM Oracle Siebel et au développement d’une application métier utilisée quotidiennement par les conseillers du call center Prévoyance.
 
-**Backend & Microservices – Java / Micronaut / Spring Boot**
+#### Backend & Microservices – Java / Micronaut / Spring Boot
 
 - Conception et développement de microservices remplaçant le CRM Oracle Siebel (gestion des personnes, demandes et structures)
 - Développement from scratch du microservice PIVOT en Micronaut pour la recherche multicritère des actions
@@ -34,13 +34,13 @@ Au sein de l'équipe agile **PWIE** chez Groupama, j’ai contribué à la moder
 - Contribution à un microservice GraphQL dédié à l’affichage des contrats
 - Participation à l’architecture microservices et à l’évolution du SI cible
 
-**Frontend – VueJS 3 / Microfrontend**
+#### Frontend – VueJS 3 / Microfrontend
 
 - Développement et débogage de l’application PWIE en VueJS 3 dans une architecture microfrontend Single-SPA
 - Développement de fonctionnalités métier utilisées en production par les conseillers Prévoyance
 - Intégration frontend/backend et amélioration de l’expérience utilisateur
 
-**Travail en équipe & Méthodes Agile**
+#### Travail en équipe & Méthodes Agile
 
 - Travail au sein d’équipes de développement d’environ 10 personnes dans un environnement grand compte
 - Participation aux cérémonies Agile : sprints, daily meetings, refinements, démonstrations et rétrospectives

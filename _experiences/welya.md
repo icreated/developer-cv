@@ -23,7 +23,7 @@ sitemap: false
 
 Au sein de l’équipe de développement Welya, j’ai participé à l’évolution de la plateforme de streaming de webinars ainsi qu’à l’amélioration des performances et de la fiabilité des services backend.
 
-**Missions réalisées :**
+#### Missions réalisées :
 
 - Développement backend de la plateforme de streaming et de diffusion de webinars
 - Contribution aux fonctionnalités temps réel autour du chat et des métriques utilisateurs
