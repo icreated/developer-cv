@@ -50,6 +50,7 @@ defaults:
 #   - vendor/gems/
 #   - vendor/ruby/
 social:
+  malt: sergeypolyarus
   github: icreated
   linkedin: icreated
   stackoverflow: spok
@@ -59,6 +60,9 @@ social:
 icreated:
   location: LYON, FRANCE
   links:
+    malt:
+      title: Malt
+      url: https://www.malt.fr/profile/sergeypolyarus
     github:
       title: github
       url: https://github.com/icreated
