@@ -108,6 +108,10 @@ html[data-theme="dark"] {
   .experience .item .title {
 	  color: $dm-text-color;
   }
+  .experience .item blockquote {
+	  color: $dm-text-color-secondary;
+	  border-left-color: $color-2;
+  }
   .testimonials .item .quote {
 	  color: $dm-text-color;
   }

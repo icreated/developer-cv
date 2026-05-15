@@ -307,10 +307,10 @@ a.dotted-link {
             margin-top: 0;
             margin-bottom: 5px;
             line-height: 1.5;
-            
+
             .place {
                 color: $grey;
-                font-weight: normal; 
+                font-weight: normal;
                 a {
                     color: $grey;
                     &:hover {
@@ -322,7 +322,17 @@ a.dotted-link {
                 color: $grey;
                 font-weight: normal;
             }
-        }        
+        }
+        blockquote {
+            color: $text-color-secondary;
+            font-style: italic;
+            border-left: 4px solid lighten($color-2, 30%);
+            padding: 6px 15px;
+            margin: 15px 0 10px;
+            p {
+                margin-bottom: 0;
+            }
+        }
     }
 
 }
