@@ -7,5 +7,6 @@
 - Je suis très curieux de nature et j'ai hâte d'apprendre de nouvelles choses.
 - **Important** : Je fais la relecture et la validation de tout ce que génère l'IA. Je maîtrise le domaine et je contrôle la qualité 🔍
 - Je ne suis pas intéressé par WinDev, C++, C#, .Net, PHP, Ruby, etc. :smile: mais avec IA... on peut faire des miracles, non ? 😉
+- **Mon projet du moment** : [Lumnik](https://lumnik.fr) 🧊 — je dégèle les données prisonnières des vieux ERP pour qu'on puisse enfin leur parler en français. Lecture seule, zéro risque, et une IA qui préfère dire « je ne sais pas » plutôt qu'inventer 💡
 - **Fun fact** : Mon code de développeur diminue chaque jour, mais mes compétences IA augmentent... c'est pas une coïncidence 📉📈
 - **Bonus** : Je suis guitariste classique et j'improvise jazz 🎸. L'IA ne m'aide pas là-dedans... faut bien garder UN domaine où je suis maître 😄

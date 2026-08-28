@@ -2,7 +2,7 @@
     <div class="section-inner shadow-sm rounded">
         <h2 class="heading" id="Projet">Mes Projects</h2>
         <div class="content">
-            {% assign featured_projects = site.projects | where: 'status', 'featured' %}
+            {% assign featured_projects = site.projects | where: 'status', 'featured' | sort: 'order' %}
             {% if featured_projects.size > 0 %}
                 {% for project in featured_projects %}
                     <div class="item featured text-center">
