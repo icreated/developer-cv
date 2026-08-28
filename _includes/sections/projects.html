@@ -36,7 +36,7 @@
                 {% endfor %}
             {% endif %}
 
-            {% assign projects = site.projects | where: 'status', 'published' %}
+            {% assign projects = site.projects | where: 'status', 'published' | sort: 'order' %}
             {% if projects.size > 0 %}
                 {% for project in projects %}
                     <div class="item row">
